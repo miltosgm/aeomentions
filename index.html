@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEO Mentions – Get Cited by AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;700;800;900&family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=Spline+Sans+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F6F3EE;
+  --white: #FDFCFA;
+  --surface: #EDE9E1;
+  --surface2: #E3DDD4;
+  --green: #15803D;
+  --green-bright: #22C55E;
+  --green-dim: rgba(21,128,61,0.07);
+  --green-border: rgba(21,128,61,0.15);
+  --ink: #141210;
+  --muted: rgba(20,18,16,0.5);
+  --rule: rgba(20,18,16,0.09);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--ink); font-family:'Epilogue',sans-serif; overflow-x:hidden; }
+
+/* NAV */
+nav {
+  border-bottom:1px solid var(--rule); padding:0 56px; height:60px;
+  display:flex; align-items:center; justify-content:space-between;
+  position:sticky; top:0; z-index:100;
+  background:rgba(246,243,238,0.96); backdrop-filter:blur(12px);
+}
+.logo { display:flex; align-items:center; gap:12px; }
+.logo-badge {
+  height:32px; padding:0 10px; background:var(--green); border-radius:6px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:14px; font-weight:900; color:#fff; letter-spacing:-0.02em;
+}
+.logo-name { font-size:17px; font-weight:800; letter-spacing:-0.03em; color:var(--ink); }
+.logo-name span { color:var(--green); }
+.nav-right { display:flex; align-items:center; gap:16px; }
+.nav-cta {
+  background:var(--green); color:#fff;
+  font-size:13px; font-weight:700; padding:9px 22px; border-radius:7px;
+  text-decoration:none; transition:all 0.2s;
+}
+.nav-cta:hover { background:#166534; }
+
+/* HERO */
+.hero { max-width:1160px; margin:0 auto; padding:80px 56px; }
+.hero-top { display:flex; align-items:center; gap:12px; margin-bottom:40px; }
+.hero-label {
+  display:flex; align-items:center; gap:8px;
+  border:1px solid var(--green-border); background:var(--green-dim);
+  border-radius:6px; padding:7px 14px;
+  font-family:'Spline Sans Mono',monospace; font-size:11px;
+  color:var(--green); letter-spacing:0.06em;
+}
+.hero-label::before {
+  content:''; width:6px; height:6px; background:var(--green-bright);
+  border-radius:50%; animation:pulse 1.5s ease infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.3} }
+.hero h1 {
+  font-size:clamp(52px,7.5vw,100px); font-weight:900;
+  line-height:0.97; letter-spacing:-0.04em; margin-bottom:40px; color:var(--ink);
+}
+.hero h1 em { font-style:normal; color:var(--green); }
+.hero-grid { display:grid; grid-template-columns:1fr 380px; gap:60px; align-items:start; }
+.hero-sub { font-size:17px; line-height:1.75; color:var(--muted); font-weight:300; margin-bottom:40px; }
+.cta-row { display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+.btn-green {
+  background:var(--green); color:#fff; font-weight:800; font-size:15px;
+  padding:16px 32px; border-radius:10px; text-decoration:none; transition:all 0.2s;
+  box-shadow:0 4px 20px rgba(21,128,61,0.2);
+}
+.btn-green:hover { background:#166534; transform:translateY(-2px); }
+.cta-note { font-family:'Spline Sans Mono',monospace; font-size:11px; color:var(--muted); }
+
+/* SCORE CARD */
+.score-card {
+  background:var(--white); border:1px solid var(--rule);
+  border-radius:14px; overflow:hidden; box-shadow:0 4px 24px rgba(20,18,16,0.07);
+}
+.score-head { background:var(--surface); padding:18px 20px; border-bottom:1px solid var(--rule); display:flex; align-items:center; justify-content:space-between; }
+.score-head-title { font-family:'Spline Sans Mono',monospace; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); }
+.score-badge { background:var(--green-dim); border:1px solid var(--green-border); border-radius:4px; padding:3px 10px; font-family:'Spline Sans Mono',monospace; font-size:10px; color:var(--green); }
+.score-row { display:flex; align-items:center; justify-content:space-between; padding:14px 20px; border-bottom:1px solid var(--rule); font-size:13px; color:var(--muted); }
+.score-row:last-of-type { border-bottom:none; }
+.score-row-left { display:flex; align-items:center; gap:10px; }
+.engine-color { width:8px; height:8px; border-radius:2px; flex-shrink:0; }
+.ec-g{background:#4285F4;} .ec-p{background:#1FB8CD;} .ec-c{background:#10A37F;} .ec-claude{background:#CC785C;} .ec-gem{background:#7B2FBE;}
+.score-status { font-family:'Spline Sans Mono',monospace; font-size:11px; padding:3px 9px; border-radius:4px; font-weight:500; }
+.s-bad { background:rgba(239,68,68,0.08); color:#DC2626; }
+.score-foot { border-top:1px solid var(--rule); padding:16px 20px; background:var(--surface); }
+.score-foot-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+.sfl { font-family:'Spline Sans Mono',monospace; font-size:11px; color:var(--muted); }
+.sfv { font-size:28px; font-weight:900; color:var(--green); }
+.progress { height:5px; background:var(--rule); border-radius:3px; overflow:hidden; }
+.progress-fill { height:100%; width:2%; background:var(--green); border-radius:3px; }
+.fix-btn {
+  display:block; text-align:center; margin-top:14px; padding:12px; border-radius:8px;
+  background:var(--green-dim); border:1px solid var(--green-border);
+  font-size:13px; font-weight:700; color:var(--green); text-decoration:none; transition:all 0.2s;
+}
+.fix-btn:hover { background:var(--green); color:#fff; }
+
+/* PROOF BAR */
+.proof-bar {
+  border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
+  background:var(--ink); padding:0 56px; display:flex; overflow:hidden;
+}
+.proof-item {
+  display:flex; align-items:center; gap:9px;
+  font-family:'Spline Sans Mono',monospace; font-size:10px;
+  letter-spacing:0.15em; text-transform:uppercase;
+  color:rgba(255,255,255,0.3); padding:15px 36px 15px 0;
+  margin-right:36px; white-space:nowrap;
+  border-right:1px solid rgba(255,255,255,0.06);
+}
+.proof-item:last-child { border-right:none; }
+.p-tri { width:0; height:0; border-left:5px solid transparent; border-right:5px solid transparent; border-bottom:7px solid var(--green-bright); flex-shrink:0; }
+
+/* STAT BAR */
+.stat-bar { background:var(--green); padding:48px 56px; }
+.stat-bar-inner { max-width:1160px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); }
+.stat-item { padding:0 40px; border-right:1px solid rgba(255,255,255,0.2); text-align:center; }
+.stat-item:first-child { padding-left:0; }
+.stat-item:last-child { border-right:none; }
+.stat-num { font-size:56px; font-weight:900; letter-spacing:-0.04em; line-height:1; color:#fff; margin-bottom:8px; }
+.stat-label { font-size:13px; font-weight:500; color:rgba(255,255,255,0.65); line-height:1.4; }
+
+/* PROBLEM */
+.problem-section {
+  max-width:1160px; margin:0 auto; padding:80px 56px;
+  display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;
+}
+.sec-tag { font-family:'Spline Sans Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--green); margin-bottom:20px; }
+.problem-section h2 { font-size:42px; font-weight:900; letter-spacing:-0.04em; line-height:1.1; color:var(--ink); }
+.prob-list { list-style:none; display:flex; flex-direction:column; }
+.prob-li { display:flex; gap:16px; align-items:flex-start; padding:16px 0; border-bottom:1px solid var(--rule); font-size:14px; color:var(--muted); line-height:1.55; transition:color 0.2s; }
+.prob-li:last-child { border-bottom:none; }
+.prob-li:hover { color:var(--ink); }
+.prob-bullet { width:6px; height:6px; border-radius:1px; background:var(--green); flex-shrink:0; margin-top:6px; transform:rotate(45deg); }
+
+/* BEFORE / AFTER */
+.ba-section { background:var(--surface); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:80px 0; }
+.ba-inner { max-width:1160px; margin:0 auto; padding:0 56px; }
+.ba-inner h2 { font-size:44px; font-weight:900; letter-spacing:-0.04em; margin-bottom:48px; color:var(--ink); }
+.ba-grid { display:grid; grid-template-columns:1fr 60px 1fr; gap:0; align-items:stretch; }
+.ba-col { border-radius:14px; overflow:hidden; }
+.ba-col-head { padding:20px 28px; font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; font-weight:600; display:flex; align-items:center; gap:10px; }
+.ba-before .ba-col-head { background:rgba(239,68,68,0.07); color:#DC2626; border-bottom:1px solid rgba(239,68,68,0.12); }
+.ba-after .ba-col-head { background:var(--green-dim); color:var(--green); border-bottom:1px solid var(--green-border); }
+.ba-before { border:1px solid rgba(239,68,68,0.12); background:rgba(239,68,68,0.02); }
+.ba-after { border:1px solid var(--green-border); background:rgba(21,128,61,0.03); }
+.ba-items { list-style:none; padding:12px 0; }
+.ba-item { display:flex; align-items:flex-start; gap:14px; padding:14px 28px; border-bottom:1px solid var(--rule); font-size:14px; color:var(--muted); line-height:1.55; }
+.ba-item:last-child { border-bottom:none; }
+.ba-icon {
+  width:28px; height:28px; border-radius:7px;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+.ba-before .ba-icon { background:rgba(220,38,38,0.08); color:#DC2626; }
+.ba-after .ba-icon { background:var(--green-dim); color:var(--green); }
+.ba-icon svg { width:14px; height:14px; stroke-width:2; }
+.ba-divider { display:flex; align-items:center; justify-content:center; }
+.ba-vs { width:44px; height:44px; border-radius:50%; background:var(--white); border:1px solid var(--rule); display:flex; align-items:center; justify-content:center; font-family:'Spline Sans Mono',monospace; font-size:11px; color:var(--muted); }
+
+/* PACKAGES */
+.pkg-section { background:var(--bg); padding:80px 0; }
+.pkg-inner { max-width:1100px; margin:0 auto; padding:0 56px; }
+.pkg-head { margin-bottom:48px; }
+.pkg-head .sec-tag { color:var(--green); }
+.pkg-head h2 { font-size:44px; font-weight:900; letter-spacing:-0.04em; color:var(--ink); }
+.pkg-rows { border-top:1px solid var(--rule); }
+.pkg-row {
+  display:grid; grid-template-columns:200px 1fr 160px 160px;
+  gap:32px; align-items:center;
+  padding:32px 28px; border-bottom:1px solid var(--rule);
+  transition:background 0.2s;
+}
+.pkg-row:hover { background:rgba(21,128,61,0.02); }
+.pkg-row.featured { background:var(--surface); }
+.pkg-row.featured:hover { background:var(--surface2); }
+.pkg-left {}
+.pkg-name {
+  font-family:'Fraunces',serif; font-style:italic;
+  font-size:38px; font-weight:500; line-height:1;
+  letter-spacing:-0.02em; color:var(--ink); margin-bottom:8px;
+}
+.pkg-row.featured .pkg-name { color:var(--green); }
+.pkg-tier {
+  font-family:'Spline Sans Mono',monospace; font-size:10px;
+  letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--muted); line-height:1.5;
+}
+.pkg-tier strong {
+  color:var(--green); font-weight:500;
+}
+.pkg-desc {
+  font-size:15px; line-height:1.6; color:var(--ink);
+  font-weight:400;
+}
+.pkg-row.featured .pkg-desc { color:var(--ink); font-weight:500; }
+.pkg-right { text-align:left; }
+.pkg-price {
+  font-family:'Fraunces',serif; font-style:italic;
+  font-size:46px; font-weight:500; line-height:1;
+  letter-spacing:-0.02em; color:var(--ink);
+}
+.pkg-row.featured .pkg-price { color:var(--green); }
+.pkg-period {
+  font-family:'Spline Sans Mono',monospace; font-size:10px;
+  letter-spacing:0.12em; color:var(--muted);
+  margin-top:8px; text-transform:lowercase;
+}
+.pkg-cta-row {
+  display:flex; justify-content:flex-end; padding-top:32px;
+}
+.pkg-cta-link {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:14px 28px; background:var(--green); color:#fff;
+  font-size:14px; font-weight:700; border-radius:8px;
+  text-decoration:none; transition:all 0.2s;
+}
+.pkg-cta-link:hover { background:#166534; transform:translateY(-1px); }
+.pkg-row-cta {
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  padding:12px 18px; border:1.5px solid var(--ink); color:var(--ink);
+  font-size:13px; font-weight:700; border-radius:8px;
+  text-decoration:none; transition:all 0.2s; white-space:nowrap;
+  font-family:'Epilogue',sans-serif;
+}
+.pkg-row-cta:hover { background:var(--ink); color:#fff; }
+.pkg-row.featured .pkg-row-cta {
+  background:var(--green); color:#fff; border-color:var(--green);
+}
+.pkg-row.featured .pkg-row-cta:hover { background:#166534; border-color:#166534; }
+
+
+/* HOW */
+.how { max-width:1160px; margin:0 auto; padding:80px 56px; }
+.how h2 { font-size:44px; font-weight:900; letter-spacing:-0.04em; margin-bottom:48px; color:var(--ink); }
+.steps { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--rule); }
+.step { background:var(--white); padding:32px 24px; }
+.step-n { font-family:'Spline Sans Mono',monospace; font-size:36px; font-weight:300; color:var(--green-border); line-height:1; margin-bottom:18px; }
+.step h3 { font-size:15px; font-weight:700; margin-bottom:9px; color:var(--ink); }
+.step p { font-size:13px; line-height:1.7; color:var(--muted); }
+
+/* REVIEWS */
+.reviews-section { background:var(--surface); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:80px 0; }
+.reviews-inner { max-width:1160px; margin:0 auto; padding:0 56px; }
+.reviews-inner h2 { font-size:44px; font-weight:900; letter-spacing:-0.04em; margin-bottom:48px; color:var(--ink); }
+.reviews-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.review-card { background:var(--white); border:1px solid var(--rule); border-radius:14px; padding:32px 28px; transition:all 0.2s; box-shadow:0 2px 12px rgba(20,18,16,0.04); }
+.review-card:hover { border-color:var(--green-border); box-shadow:0 6px 24px rgba(21,128,61,0.08); }
+.review-stars { display:flex; gap:3px; margin-bottom:20px; }
+.star { color:var(--green); font-size:16px; }
+.review-text { font-size:14px; line-height:1.7; color:var(--muted); margin-bottom:24px; font-weight:300; font-style:italic; }
+.review-author { display:flex; align-items:center; gap:12px; }
+.review-avatar { width:44px; height:44px; border-radius:50%; flex-shrink:0; object-fit:cover; border:1.5px solid var(--green-border); }
+.review-name { font-size:14px; font-weight:700; color:var(--ink); }
+.review-role { font-family:'Spline Sans Mono',monospace; font-size:10px; color:var(--muted); margin-top:2px; }
+
+/* FAQ */
+.faq-section { max-width:1160px; margin:0 auto; padding:80px 56px; }
+.faq-section h2 { font-size:44px; font-weight:900; letter-spacing:-0.04em; margin-bottom:48px; color:var(--ink); }
+.faq-list { display:flex; flex-direction:column; gap:0; border:1px solid var(--rule); border-radius:14px; overflow:hidden; }
+.faq-item { border-bottom:1px solid var(--rule); }
+.faq-item:last-child { border-bottom:none; }
+.faq-q { width:100%; background:none; border:none; text-align:left; padding:24px 28px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-family:'Epilogue',sans-serif; font-size:16px; font-weight:700; color:var(--ink); transition:background 0.2s; }
+.faq-q:hover { background:var(--surface); }
+.faq-icon { color:var(--green); font-size:20px; flex-shrink:0; transition:transform 0.25s; font-weight:300; }
+.faq-a { display:none; padding:0 28px 24px; font-size:14px; line-height:1.75; color:var(--muted); }
+.faq-item.open .faq-a { display:block; }
+.faq-item.open .faq-icon { transform:rotate(45deg); }
+.faq-item.open .faq-q { background:var(--surface); }
+
+/* CTA */
+.cta-section { background:var(--green); padding:80px 56px; display:flex; align-items:center; justify-content:space-between; gap:40px; }
+.cta-section h2 { font-size:clamp(40px,5vw,68px); font-weight:900; letter-spacing:-0.04em; line-height:1; color:#fff; }
+.cta-section h2 em { font-style:normal; opacity:0.65; }
+.cta-right { flex-shrink:0; }
+.cta-right p { font-family:'Spline Sans Mono',monospace; font-size:11px; color:rgba(255,255,255,0.55); margin-bottom:20px; text-align:right; }
+.btn-dark-lg { display:inline-block; background:#fff; color:var(--green); font-weight:800; font-size:15px; padding:18px 36px; border-radius:10px; text-decoration:none; transition:all 0.2s; box-shadow:0 4px 16px rgba(0,0,0,0.1); }
+.btn-dark-lg:hover { background:var(--ink); color:#fff; transform:translateY(-2px); }
+
+footer { background:var(--ink); border-top:1px solid rgba(255,255,255,0.05); padding:20px 56px; display:flex; justify-content:space-between; align-items:center; }
+footer p { font-family:'Spline Sans Mono',monospace; font-size:10px; color:rgba(255,255,255,0.2); letter-spacing:0.12em; }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+.hero-label{animation:fadeUp 0.5s ease forwards;}
+.hero h1{animation:fadeUp 0.5s 0.1s ease both;}
+.hero-grid{animation:fadeUp 0.5s 0.2s ease both;}
+
+@media(max-width:900px){
+  nav,footer{padding-left:24px;padding-right:24px;}
+  .hero,.problem-section,.pkg-inner,.how,.cta-section,.proof-bar,.stat-bar,.ba-inner,.reviews-inner,.faq-section{padding-left:24px;padding-right:24px;}
+  .hero{padding-top:60px;padding-bottom:48px;}
+  .hero-grid,.ba-grid{grid-template-columns:1fr;}
+  .score-card,.ba-divider{display:none;}
+  .stat-bar-inner{grid-template-columns:1fr 1fr;gap:32px;}
+  .stat-item{border-right:none;padding:0;}
+  .problem-section{grid-template-columns:1fr;}
+  .pkg-row{grid-template-columns:1fr;gap:16px;text-align:left;padding:24px 16px;} .pkg-name{font-size:32px;} .pkg-price{font-size:38px;} .pkg-row-cta{width:100%;justify-content:center;} .reviews-grid{grid-template-columns:1fr;}
+  .steps{grid-template-columns:1fr 1fr;}
+  .cta-section{flex-direction:column;}
+  .cta-right p{text-align:left;}
+}
+
+/* VISUALS SECTION */
+.visuals-section { background:var(--bg); padding:80px 0; border-bottom:1px solid var(--rule); }
+.visuals-inner { max-width:1160px; margin:0 auto; padding:0 56px; }
+.visuals-sub { font-size:16px; color:var(--muted); font-weight:300; margin-top:12px; margin-bottom:48px; max-width:600px; line-height:1.7; }
+.visual-block { margin-bottom:48px; }
+.visual-label { font-family:'Spline Sans Mono',monospace; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:16px; }
+.vis-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.vis-card { background:var(--white); border:1px solid var(--rule); border-radius:14px; overflow:hidden; }
+.vis-card-head { padding:10px 16px; display:flex; align-items:center; gap:8px; font-size:12px; font-weight:500; }
+.vis-bad { background:rgba(239,68,68,0.06); color:#DC2626; border-bottom:1px solid rgba(239,68,68,0.12); }
+.vis-good { background:#EAF3DE; color:#3B6D11; border-bottom:1px solid #C0DD97; }
+.vis-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.vis-dot-bad { background:#DC2626; }
+.vis-dot-good { background:var(--green); }
+.vis-chat-wrap { padding:16px; }
+.vis-bubble-out { display:flex; justify-content:flex-end; margin-bottom:12px; }
+.vis-bubble-out { background:none; }
+.vis-bubble-out { font-size:0; }
+.vis-chat-wrap .vis-bubble-out::after { content:'Best accounting firm in Athens?'; font-size:13px; background:#DBEAFE; color:#1E40AF; padding:10px 14px; border-radius:12px 12px 2px 12px; display:inline-block; max-width:85%; }
+.vis-bubble-in-row { display:flex; gap:10px; align-items:flex-start; }
+.vis-ai-avatar { width:26px; height:26px; border-radius:50%; background:var(--surface); border:1px solid var(--rule); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:500; color:var(--muted); flex-shrink:0; }
+.vis-bubble-in { background:var(--surface); border-radius:2px 12px 12px 12px; padding:12px 14px; font-size:13px; color:var(--ink); flex:1; }
+.vis-result-row { display:flex; flex-direction:column; padding:8px 10px; border-radius:8px; margin-bottom:6px; }
+.vis-result-neutral { background:var(--white); border:1px solid var(--rule); }
+.vis-result-top { background:#EAF3DE; border:1.5px solid var(--green); position:relative; padding-top:16px; }
+.vis-top-tag { position:absolute; top:-9px; left:8px; background:var(--green); color:#fff; font-size:9px; font-weight:600; letter-spacing:0.1em; padding:2px 8px; border-radius:4px; }
+.vis-result-name { font-size:12px; font-weight:500; color:var(--ink); }
+.vis-result-url { font-size:11px; color:var(--muted); margin-top:1px; }
+.vis-status-pill { margin-top:10px; padding:7px 12px; border-radius:6px; font-size:12px; font-weight:500; }
+.vis-status-bad { background:rgba(239,68,68,0.07); color:#DC2626; }
+.vis-status-good { background:#EAF3DE; color:#3B6D11; }
+.vis-browser-bar { background:var(--surface); border:1px solid var(--rule); border-radius:8px; padding:6px 10px; display:flex; align-items:center; gap:8px; margin-bottom:10px; }
+.vis-traffic-lights { display:flex; gap:4px; }
+.vis-tl { width:7px; height:7px; border-radius:50%; }
+.vis-tl-r { background:#FF5F57; } .vis-tl-y { background:#FFBD2E; } .vis-tl-g { background:#28CA41; }
+.vis-url-bar { flex:1; background:var(--white); border:1px solid var(--rule); border-radius:4px; padding:3px 8px; font-size:11px; color:var(--muted); font-family:'Spline Sans Mono',monospace; }
+.vis-search-bar { background:var(--surface); border:1px solid var(--rule); border-radius:20px; padding:7px 14px; font-size:13px; color:var(--ink); margin-bottom:10px; }
+.vis-ai-box { border:1px solid var(--rule); border-radius:10px; padding:12px; margin-bottom:8px; }
+.vis-ai-box-good { border-color:#97C459; background:rgba(34,197,94,0.02); }
+.vis-ai-box-label { font-size:10px; font-weight:500; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px; font-family:'Spline Sans Mono',monospace; }
+.vis-source-pills { display:flex; gap:6px; flex-wrap:wrap; }
+.vis-source-pill { background:var(--surface); border:1px solid var(--rule); border-radius:4px; padding:3px 8px; font-size:11px; color:var(--muted); font-family:'Spline Sans Mono',monospace; }
+.vis-source-pill-good { background:#EAF3DE; border-color:#97C459; color:#3B6D11; font-weight:500; }
+.vis-highlight { background:#EAF3DE; color:#27500A; border-radius:3px; padding:1px 4px; font-weight:500; }
+.vis-verdict { font-size:11px; padding:6px 0; display:flex; align-items:center; gap:6px; font-family:'Spline Sans Mono',monospace; }
+.vis-verdict-bad { color:#DC2626; }
+.vis-verdict-good { color:#3B6D11; }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-badge">AEO</div>
+    <div class="logo-name">AEO<span>Mentions</span></div>
+  </div>
+  <div class="nav-right">
+    <a href="#contact" class="nav-cta">Get Started</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-top"><div class="hero-label">Answer Engine Optimization</div></div>
+  <h1>When People Ask AI<br><em>You Should<br>Be the Answer.</em></h1>
+  <div class="hero-grid">
+    <div>
+      <p class="hero-sub">Done-for-you monthly service. We get your business cited in Google AI Overviews, Perplexity, ChatGPT, Claude, and Gemini, so when someone searches for what you sell, your brand shows up.</p>
+      <div class="cta-row">
+        <a href="#packages" class="btn-green">See Packages</a>
+        <span class="cta-note">From €500/month · No lock-in</span>
+      </div>
+    </div>
+    <div class="score-card">
+      <div class="score-head"><div class="score-head-title">AI Citation Audit</div><div class="score-badge">Live Check</div></div>
+      <div class="score-body">
+        <div class="score-row"><div class="score-row-left"><div class="engine-color ec-g"></div>Google AI Overviews</div><span class="score-status s-bad">Not cited</span></div>
+        <div class="score-row"><div class="score-row-left"><div class="engine-color ec-p"></div>Perplexity</div><span class="score-status s-bad">Not cited</span></div>
+        <div class="score-row"><div class="score-row-left"><div class="engine-color ec-c"></div>ChatGPT Search</div><span class="score-status s-bad">Not cited</span></div>
+        <div class="score-row"><div class="score-row-left"><div class="engine-color ec-claude"></div>Claude</div><span class="score-status s-bad">Not cited</span></div>
+        <div class="score-row"><div class="score-row-left"><div class="engine-color ec-gem"></div>Gemini</div><span class="score-status s-bad">Not cited</span></div>
+      </div>
+      <div class="score-foot">
+        <div class="score-foot-row"><span class="sfl">AI Share of Voice</span><span class="sfv">0%</span></div>
+        <div class="progress"><div class="progress-fill"></div></div>
+        <a href="#packages" class="fix-btn">Fix This Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="proof-bar">
+  <div class="proof-item"><div class="p-tri"></div>Google AI Overviews</div>
+  <div class="proof-item"><div class="p-tri"></div>Perplexity Citations</div>
+  <div class="proof-item"><div class="p-tri"></div>ChatGPT Search</div>
+  <div class="proof-item"><div class="p-tri"></div>Claude Citations</div>
+  <div class="proof-item"><div class="p-tri"></div>Gemini Results</div>
+  <div class="proof-item"><div class="p-tri"></div>Monthly Reporting</div>
+  <div class="proof-item"><div class="p-tri"></div>Done For You</div>
+</div>
+
+<div class="stat-bar">
+  <div class="stat-bar-inner">
+    <div class="stat-item"><div class="stat-num">68%</div><div class="stat-label">of searches now end at the AI answer, never reaching your site</div></div>
+    <div class="stat-item"><div class="stat-num">5</div><div class="stat-label">AI engines that now influence buying decisions daily</div></div>
+    <div class="stat-item"><div class="stat-num">3x</div><div class="stat-label">more buyer trust in brands cited by AI vs paid ads</div></div>
+    <div class="stat-item"><div class="stat-num">90d</div><div class="stat-label">average time to your first AI citation after we start</div></div>
+  </div>
+</div>
+
+<!-- VISUALS SECTION -->
+<section class="visuals-section">
+  <div class="visuals-inner">
+    <div class="sec-tag">See It In Action</div>
+    <h2 style="font-size:44px;font-weight:900;letter-spacing:-0.04em;color:var(--ink);">Are You the Answer<br>AI Gives or Invisible?</h2>
+    <p class="visuals-sub">This is what happens when a potential customer asks an AI engine for a recommendation in your niche right now.</p>
+
+    <div class="visual-block">
+      <div class="visual-label">How it looks in ChatGPT and Perplexity</div>
+      <div class="vis-grid-2">
+        <div class="vis-card">
+          <div class="vis-card-head vis-bad"><div class="vis-dot vis-dot-bad"></div><span>Without AEO Mentions</span></div>
+          <div class="vis-chat-wrap">
+            <div class="vis-bubble-out"></div>
+            <div class="vis-bubble-in-row">
+              <div class="vis-ai-avatar">AI</div>
+              <div class="vis-bubble-in">
+                <div style="margin-bottom:10px;font-size:13px;line-height:1.6;">Here are some accounting firms in Athens worth considering:</div>
+                <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">Deloitte Greece</span><span class="vis-result-url">deloitte.com/gr</span></div>
+                <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">PwC Greece</span><span class="vis-result-url">pwc.com/gr</span></div>
+                <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">EY Greece</span><span class="vis-result-url">ey.com/gr</span></div>
+                <div class="vis-status-pill vis-status-bad">Your business: not mentioned</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vis-card">
+          <div class="vis-card-head vis-good"><div class="vis-dot vis-dot-good"></div><span>With AEO Mentions</span></div>
+          <div class="vis-chat-wrap">
+            <div class="vis-bubble-out"></div>
+            <div class="vis-bubble-in-row">
+              <div class="vis-ai-avatar">AI</div>
+              <div class="vis-bubble-in">
+                <div style="margin-bottom:10px;font-size:13px;line-height:1.6;">Here are some accounting firms in Athens worth considering:</div>
+                <div class="vis-result-row vis-result-top">
+                  <div class="vis-top-tag">Top result</div>
+                  <span class="vis-result-name" style="color:#27500A;">Your Business Name</span>
+                  <span class="vis-result-url" style="color:#3B6D11;">yourbusiness.gr · Cited source</span>
+                </div>
+                <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">Deloitte Greece</span><span class="vis-result-url">deloitte.com/gr</span></div>
+                <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">PwC Greece</span><span class="vis-result-url">pwc.com/gr</span></div>
+                <div class="vis-status-pill vis-status-good">Your business: cited #1</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="visual-block">
+      <div class="visual-label">How it looks in Google AI Overviews</div>
+      <div class="vis-grid-2">
+        <div class="vis-card">
+          <div class="vis-card-head vis-bad"><div class="vis-dot vis-dot-bad"></div><span>Without AEO Mentions</span></div>
+          <div style="padding:14px;">
+            <div class="vis-browser-bar">
+              <div class="vis-traffic-lights"><div class="vis-tl vis-tl-r"></div><div class="vis-tl vis-tl-y"></div><div class="vis-tl vis-tl-g"></div></div>
+              <div class="vis-url-bar">google.com</div>
+            </div>
+            <div class="vis-search-bar">best accountant athens</div>
+            <div class="vis-ai-box">
+              <div class="vis-ai-box-label">AI Overview</div>
+              <div style="font-size:12px;color:var(--ink);line-height:1.65;margin-bottom:10px;">Top accounting firms in Athens include Deloitte Greece, PwC, EY, and KPMG, all offering comprehensive financial services for businesses of all sizes.</div>
+              <div class="vis-source-pills">
+                <div class="vis-source-pill">deloitte.com/gr</div>
+                <div class="vis-source-pill">pwc.com/gr</div>
+                <div class="vis-source-pill">ey.com/gr</div>
+              </div>
+            </div>
+            <div class="vis-verdict vis-verdict-bad">Your business not included</div>
+          </div>
+        </div>
+        <div class="vis-card">
+          <div class="vis-card-head vis-good"><div class="vis-dot vis-dot-good"></div><span>With AEO Mentions</span></div>
+          <div style="padding:14px;">
+            <div class="vis-browser-bar">
+              <div class="vis-traffic-lights"><div class="vis-tl vis-tl-r"></div><div class="vis-tl vis-tl-y"></div><div class="vis-tl vis-tl-g"></div></div>
+              <div class="vis-url-bar">google.com</div>
+            </div>
+            <div class="vis-search-bar">best accountant athens</div>
+            <div class="vis-ai-box vis-ai-box-good">
+              <div class="vis-ai-box-label">AI Overview</div>
+              <div style="font-size:12px;color:var(--ink);line-height:1.65;margin-bottom:10px;"><span class="vis-highlight">Your Business</span> is widely recommended as a top accounting firm in Athens, known for SME expertise. Other notable firms include Deloitte Greece and PwC.</div>
+              <div class="vis-source-pills">
+                <div class="vis-source-pill vis-source-pill-good">yourbusiness.gr</div>
+                <div class="vis-source-pill">deloitte.com/gr</div>
+                <div class="vis-source-pill">pwc.com/gr</div>
+              </div>
+            </div>
+            <div class="vis-verdict vis-verdict-good">Your business cited as first source</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="problem-section">
+  <div>
+    <div class="sec-tag">The Problem</div>
+    <h2>AI is replacing Google.<br>Are you in it?</h2>
+  </div>
+  <ul class="prob-list">
+    <li class="prob-li"><div class="prob-bullet"></div>Customers ask ChatGPT "best accountant in Athens" - you're invisible</li>
+    <li class="prob-li"><div class="prob-bullet"></div>Competitors are being cited as trusted sources in AI answers</li>
+    <li class="prob-li"><div class="prob-bullet"></div>Traditional SEO no longer guarantees AI mentions</li>
+    <li class="prob-li"><div class="prob-bullet"></div>AI-generated answers are the new first page of search</li>
+    <li class="prob-li"><div class="prob-bullet"></div>Most businesses have zero strategy for this yet</li>
+  </ul>
+</section>
+
+<section class="ba-section">
+  <div class="ba-inner">
+    <div class="sec-tag">Before and After</div>
+    <h2>What AI Search Looks Like<br>Without You vs With You</h2>
+    <div class="ba-grid">
+      <div class="ba-col ba-before">
+        <div class="ba-col-head"><span>✕</span> Without AEO Mentions</div>
+        <ul class="ba-items">
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/></svg></span>Your brand is invisible when customers ask AI for recommendations</li>
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg></span>Competitors get cited as the trusted answer in your niche</li>
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>You keep paying for ads while AI sends leads to others for free</li>
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg></span>No schema, no entity presence, no source authority</li>
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>Zero idea how often or where AI mentions your category</li>
+        </ul>
+      </div>
+      <div class="ba-divider"><div class="ba-vs">VS</div></div>
+      <div class="ba-col ba-after">
+        <div class="ba-col-head"><span>✓</span> With AEO Mentions</div>
+        <ul class="ba-items">
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>Your brand appears as a cited source across all 5 major AI engines</li>
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>You own the AI answer for your key buying queries</li>
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>Organic AI traffic compounds month over month at no extra cost</li>
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M5 6l7-3 7 3"/><path d="M4 10v11"/><path d="M20 10v11"/><path d="M8 14v3"/><path d="M12 14v3"/><path d="M16 14v3"/></svg></span>Strong entity presence, schema, and authority on trusted platforms</li>
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>Monthly report showing exactly where you appear and what is next</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pkg-section" id="packages">
+  <div class="pkg-inner">
+    <div class="pkg-head">
+      <div class="sec-tag">Choose Your Plan</div>
+      <h2>AI Visibility Retainer</h2>
+    </div>
+    <div class="pkg-rows">
+      <div class="pkg-row">
+        <div class="pkg-left">
+          <div class="pkg-name">Starter</div>
+          <div class="pkg-tier">Tier I · Get Found</div>
+        </div>
+        <div class="pkg-desc">5 tracked prompts, 2 monthly source pages, schema markup, 1 monthly placement, 1-page report. For businesses dipping a toe.</div>
+        <div class="pkg-right">
+          <div class="pkg-price">€500</div>
+          <div class="pkg-period">per month · no lock-in</div>
+        </div>
+        <a href="#contact" class="pkg-row-cta">Start with Starter →</a>
+      </div>
+      <div class="pkg-row featured">
+        <div class="pkg-left">
+          <div class="pkg-name">Core</div>
+          <div class="pkg-tier">Tier II · <strong>Most Chosen</strong> · Get Mentioned</div>
+        </div>
+        <div class="pkg-desc">10 tracked prompts, 4 source pages, full schema and entity reinforcement, 2 placements, competitor gap report, monthly strategy call. The sweet spot.</div>
+        <div class="pkg-right">
+          <div class="pkg-price">€900</div>
+          <div class="pkg-period">per month · no lock-in</div>
+        </div>
+        <a href="#contact" class="pkg-row-cta">Choose Core →</a>
+      </div>
+      <div class="pkg-row">
+        <div class="pkg-left">
+          <div class="pkg-name">Premium</div>
+          <div class="pkg-tier">Tier III · Get Dominant</div>
+        </div>
+        <div class="pkg-desc">20 prompts across languages, 8 pages + 4 placements, Wikidata / Crunchbase / GBP entity work, PR placements, bi-weekly calls, custom dashboard, priority support.</div>
+        <div class="pkg-right">
+          <div class="pkg-price">€1,800</div>
+          <div class="pkg-period">per month · priority queue</div>
+        </div>
+        <a href="#contact" class="pkg-row-cta">Go Premium →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="sec-tag">How It Works</div>
+  <h2>Four Steps. Monthly. Done.</h2>
+  <div class="steps">
+    <div class="step"><div class="step-n">01</div><h3>We Find Your Queries</h3><p>Research the exact questions your customers are asking AI engines about your niche and location.</p></div>
+    <div class="step"><div class="step-n">02</div><h3>We Write the Content</h3><p>Create optimized source pages structured specifically to get cited by AI engines as trusted answers.</p></div>
+    <div class="step"><div class="step-n">03</div><h3>We Publish + Place</h3><p>Publish on your site with schema markup and place content on high-authority external platforms.</p></div>
+    <div class="step"><div class="step-n">04</div><h3>We Report Results</h3><p>Monthly report showing where you appear, how often, and what we are targeting next.</p></div>
+  </div>
+</section>
+
+<section class="reviews-section">
+  <div class="reviews-inner">
+    <div class="sec-tag">Client Results</div>
+    <h2>What Our Clients Say</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="review-text">"Within 6 weeks of starting we were showing up in Perplexity answers for three of our core service queries. Our competitors have been doing traditional SEO for years and they are still invisible in AI. This is the biggest edge we have right now."</p>
+        <div class="review-author"><img class="review-avatar" src="https://i.pravatar.cc/88?img=12" alt="Michalis P."><div><div class="review-name">Michalis P.</div><div class="review-role">Managing Director · Legal Services, Athens</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="review-text">"I was skeptical at first because I had never heard of AEO. Two months in, a new client told me they found us through ChatGPT. That had never happened before. The monthly report makes it easy to see what is working and the team handles everything."</p>
+        <div class="review-author"><img class="review-avatar" src="https://i.pravatar.cc/88?img=47" alt="Sofia K."><div><div class="review-name">Sofia K.</div><div class="review-role">Founder · Accounting Firm, Thessaloniki</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="review-text">"We run a fintech startup and AI visibility is critical for us. AEO Mentions got us cited on Google AI Overviews and Perplexity for several high-intent queries in under 60 days. The ROI compared to paid ads is not even close."</p>
+        <div class="review-author"><img class="review-avatar" src="https://i.pravatar.cc/88?img=60" alt="Dimitris A."><div><div class="review-name">Dimitris A.</div><div class="review-role">CEO · Fintech Startup, Nicosia</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="sec-tag">FAQ</div>
+  <h2>Common Questions</h2>
+  <div class="faq-list">
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How is AEO different from regular SEO?<span class="faq-icon">+</span></button><div class="faq-a">Traditional SEO gets you ranked in Google's blue links. AEO gets you cited as a trusted source inside AI-generated answers on Google, Perplexity, ChatGPT, Claude, and Gemini. These are fundamentally different placements and require different strategies. Most SEO agencies do not offer this yet.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long until I see my first AI citation?<span class="faq-icon">+</span></button><div class="faq-a">Most clients see their first citation within 60 to 90 days. The timeline depends on your niche competition and how quickly AI engines index new content. We track this monthly and show you exactly where you appear.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need to do anything once I sign up?<span class="faq-icon">+</span></button><div class="faq-a">Almost nothing. We need a short onboarding call to understand your business, target queries, and audience. After that we handle everything: research, writing, publishing, schema, and reporting. You receive a clean monthly report and that is it.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What if I want to cancel?<span class="faq-icon">+</span></button><div class="faq-a">You can cancel any time with 30 days notice. There are no long-term contracts. The content and placements we create for you remain live and continue working even after you cancel.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Which industries do you work with?<span class="faq-icon">+</span></button><div class="faq-a">We work with any SME or professional service business. We have particular experience with legal, accounting, finance, fintech, real estate, healthcare, and e-commerce. If your customers are asking AI for recommendations in your category, we can help.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can you guarantee I will be cited?<span class="faq-icon">+</span></button><div class="faq-a">No ethical AEO provider can guarantee specific citations since AI engines make independent decisions. What we do guarantee is that we execute the right strategy every month, create the right content, and build the right authority signals. Based on our track record, clients start seeing citations within 90 days.</div></div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <h2>Start Getting <em>Cited by AI</em><br>This Month.</h2>
+  <div class="cta-right">
+    <p>No long contracts. Cancel anytime.<br>Results visible within 90 days.</p>
+    <a href="mailto:hello@aeomentions.com" class="btn-dark-lg">Book a Free Audit Call</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 AEOMENTIONS · ALL RIGHTS RESERVED</p>
+  <p>AEOMENTIONS.COM</p>
+</footer>
+
+
+<script>
+function toggleFaq(btn) {
+  var item = btn.closest('.faq-item');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el) {
+    el.classList.remove('open');
+  });
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>
