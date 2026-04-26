@@ -20,9 +20,7 @@
   --rule: rgba(20,18,16,0.09);
 }
 * { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
 body { background:var(--bg); color:var(--ink); font-family:'Epilogue',sans-serif; overflow-x:hidden; }
-section[id] { scroll-margin-top:80px; }
 
 /* NAV */
 nav {
@@ -329,7 +327,7 @@ footer p { font-family:'Spline Sans Mono',monospace; font-size:10px; color:rgba(
 .vis-bubble-out { display:flex; justify-content:flex-end; margin-bottom:12px; }
 .vis-bubble-out { background:none; }
 .vis-bubble-out { font-size:0; }
-.vis-chat-wrap .vis-bubble-out::after { content:'Best real estate agency in London?'; font-size:13px; background:#DBEAFE; color:#1E40AF; padding:10px 14px; border-radius:12px 12px 2px 12px; display:inline-block; max-width:85%; }
+.vis-chat-wrap .vis-bubble-out::after { content:'Best accounting firm in Athens?'; font-size:13px; background:#DBEAFE; color:#1E40AF; padding:10px 14px; border-radius:12px 12px 2px 12px; display:inline-block; max-width:85%; }
 .vis-bubble-in-row { display:flex; gap:10px; align-items:flex-start; }
 .vis-ai-avatar { width:26px; height:26px; border-radius:50%; background:var(--surface); border:1px solid var(--rule); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:500; color:var(--muted); flex-shrink:0; }
 .vis-bubble-in { background:var(--surface); border-radius:2px 12px 12px 12px; padding:12px 14px; font-size:13px; color:var(--ink); flex:1; }
@@ -369,7 +367,7 @@ footer p { font-family:'Spline Sans Mono',monospace; font-size:10px; color:rgba(
     <div class="logo-name">AEO<span>Mentions</span></div>
   </div>
   <div class="nav-right">
-    <a href="#packages" class="nav-cta">Get Started</a>
+    <a href="#contact" class="nav-cta">Get Started</a>
   </div>
 </nav>
 
@@ -422,7 +420,7 @@ footer p { font-family:'Spline Sans Mono',monospace; font-size:10px; color:rgba(
 </div>
 
 <!-- VISUALS SECTION -->
-<section class="visuals-section" id="visuals">
+<section class="visuals-section">
   <div class="visuals-inner">
     <div class="sec-tag">See It In Action</div>
     <h2 style="font-size:44px;font-weight:900;letter-spacing:-0.04em;color:var(--ink);">Are You the Answer<br>AI Gives or Invisible?</h2>
@@ -438,10 +436,10 @@ footer p { font-family:'Spline Sans Mono',monospace; font-size:10px; color:rgba(
             <div class="vis-bubble-in-row">
               <div class="vis-ai-avatar">AI</div>
               <div class="vis-bubble-in">
-                <div style="margin-bottom:10px;font-size:13px;line-height:1.6;">Here are some real estate agencies in London worth considering:</div>
-                <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">Foxtons</span><span class="vis-result-url">foxtons.co.uk</span></div>
-                <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">Knight Frank</span><span class="vis-result-url">knightfrank.co.uk</span></div>
-                <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">Savills</span><span class="vis-result-url">savills.co.uk</span></div>
+                <div style="margin-bottom:10px;font-size:13px;line-height:1.6;">Here are some accounting firms in Athens worth considering:</div>
+                <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">Deloitte Greece</span><span class="vis-result-url">deloitte.com/gr</span></div>
+                <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">PwC Greece</span><span class="vis-result-url">pwc.com/gr</span></div>
+                <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">EY Greece</span><span class="vis-result-url">ey.com/gr</span></div>
                 <div class="vis-status-pill vis-status-bad">Your business: not mentioned</div>
               </div>
             </div>
@@ -454,14 +452,14 @@ footer p { font-family:'Spline Sans Mono',monospace; font-size:10px; color:rgba(
             <div class="vis-bubble-in-row">
               <div class="vis-ai-avatar">AI</div>
               <div class="vis-bubble-in">
-                <div style="margin-bottom:10px;font-size:13px;line-height:1.6;">Here are some real estate agencies in London worth considering:</div>
+                <div style="margin-bottom:10px;font-size:13px;line-height:1.6;">Here are some accounting firms in Athens worth considering:</div>
                 <div class="vis-result-row vis-result-top">
                   <div class="vis-top-tag">Top result</div>
                   <span class="vis-result-name" style="color:#27500A;">Your Business Name</span>
-                  <span class="vis-result-url" style="color:#3B6D11;">youragency.co.uk · Cited source</span>
+                  <span class="vis-result-url" style="color:#3B6D11;">yourbusiness.gr · Cited source</span>
                 </div>
-                <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">Foxtons</span><span class="vis-result-url">foxtons.co.uk</span></div>
-                <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">Knight Frank</span><span class="vis-result-url">knightfrank.co.uk</span></div>
+                <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">Deloitte Greece</span><span class="vis-result-url">deloitte.com/gr</span></div>
+                <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">PwC Greece</span><span class="vis-result-url">pwc.com/gr</span></div>
                 <div class="vis-status-pill vis-status-good">Your business: cited #1</div>
               </div>
             </div>
@@ -480,14 +478,14 @@ footer p { font-family:'Spline Sans Mono',monospace; font-size:10px; color:rgba(
               <div class="vis-traffic-lights"><div class="vis-tl vis-tl-r"></div><div class="vis-tl vis-tl-y"></div><div class="vis-tl vis-tl-g"></div></div>
               <div class="vis-url-bar">google.com</div>
             </div>
-            <div class="vis-search-bar">best real estate agency london</div>
+            <div class="vis-search-bar">best accountant athens</div>
             <div class="vis-ai-box">
               <div class="vis-ai-box-label">AI Overview</div>
-              <div style="font-size:12px;color:var(--ink);line-height:1.65;margin-bottom:10px;">Top real estate agencies in London include Foxtons, Knight Frank, Savills, and Hamptons, all offering property services across Greater London and the South East.</div>
+              <div style="font-size:12px;color:var(--ink);line-height:1.65;margin-bottom:10px;">Top accounting firms in Athens include Deloitte Greece, PwC, EY, and KPMG, all offering comprehensive financial services for businesses of all sizes.</div>
               <div class="vis-source-pills">
-                <div class="vis-source-pill">foxtons.co.uk</div>
-                <div class="vis-source-pill">knightfrank.co.uk</div>
-                <div class="vis-source-pill">savills.co.uk</div>
+                <div class="vis-source-pill">deloitte.com/gr</div>
+                <div class="vis-source-pill">pwc.com/gr</div>
+                <div class="vis-source-pill">ey.com/gr</div>
               </div>
             </div>
             <div class="vis-verdict vis-verdict-bad">Your business not included</div>
@@ -500,14 +498,14 @@ footer p { font-family:'Spline Sans Mono',monospace; font-size:10px; color:rgba(
               <div class="vis-traffic-lights"><div class="vis-tl vis-tl-r"></div><div class="vis-tl vis-tl-y"></div><div class="vis-tl vis-tl-g"></div></div>
               <div class="vis-url-bar">google.com</div>
             </div>
-            <div class="vis-search-bar">best real estate agency london</div>
+            <div class="vis-search-bar">best accountant athens</div>
             <div class="vis-ai-box vis-ai-box-good">
               <div class="vis-ai-box-label">AI Overview</div>
-              <div style="font-size:12px;color:var(--ink);line-height:1.65;margin-bottom:10px;"><span class="vis-highlight">Your Agency</span> is widely recommended as a top real estate agency in London, known for premium property expertise. Other notable agencies include Foxtons and Knight Frank.</div>
+              <div style="font-size:12px;color:var(--ink);line-height:1.65;margin-bottom:10px;"><span class="vis-highlight">Your Business</span> is widely recommended as a top accounting firm in Athens, known for SME expertise. Other notable firms include Deloitte Greece and PwC.</div>
               <div class="vis-source-pills">
-                <div class="vis-source-pill vis-source-pill-good">youragency.co.uk</div>
-                <div class="vis-source-pill">foxtons.co.uk</div>
-                <div class="vis-source-pill">knightfrank.co.uk</div>
+                <div class="vis-source-pill vis-source-pill-good">yourbusiness.gr</div>
+                <div class="vis-source-pill">deloitte.com/gr</div>
+                <div class="vis-source-pill">pwc.com/gr</div>
               </div>
             </div>
             <div class="vis-verdict vis-verdict-good">Your business cited as first source</div>
@@ -524,7 +522,7 @@ footer p { font-family:'Spline Sans Mono',monospace; font-size:10px; color:rgba(
     <h2>AI is replacing Google.<br>Are you in it?</h2>
   </div>
   <ul class="prob-list">
-    <li class="prob-li"><div class="prob-bullet"></div>Customers ask ChatGPT "best [your service] near me" and you're invisible</li>
+    <li class="prob-li"><div class="prob-bullet"></div>Customers ask ChatGPT "best accountant in Athens" - you're invisible</li>
     <li class="prob-li"><div class="prob-bullet"></div>Competitors are being cited as trusted sources in AI answers</li>
     <li class="prob-li"><div class="prob-bullet"></div>Traditional SEO no longer guarantees AI mentions</li>
     <li class="prob-li"><div class="prob-bullet"></div>AI-generated answers are the new first page of search</li>
@@ -628,17 +626,17 @@ footer p { font-family:'Spline Sans Mono',monospace; font-size:10px; color:rgba(
       <div class="review-card">
         <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
         <p class="review-text">"Within 6 weeks of starting we were showing up in Perplexity answers for three of our core service queries. Our competitors have been doing traditional SEO for years and they are still invisible in AI. This is the biggest edge we have right now."</p>
-        <div class="review-author"><img class="review-avatar" src="https://i.pravatar.cc/88?img=12" alt="James H."><div><div class="review-name">James H.</div><div class="review-role">Managing Director · B2B Services Firm</div></div></div>
+        <div class="review-author"><img class="review-avatar" src="https://i.pravatar.cc/88?img=12" alt="Michalis P."><div><div class="review-name">Michalis P.</div><div class="review-role">Managing Director · Legal Services, Athens</div></div></div>
       </div>
       <div class="review-card">
         <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <p class="review-text">"I was skeptical at first because I had never heard of AEO. Two months in, a new customer told me they found us through ChatGPT. That had never happened before. The monthly report makes it easy to see what is working and the team handles everything."</p>
-        <div class="review-author"><img class="review-avatar" src="https://i.pravatar.cc/88?img=47" alt="Emma R."><div><div class="review-name">Emma R.</div><div class="review-role">Founder · Boutique Consultancy</div></div></div>
+        <p class="review-text">"I was skeptical at first because I had never heard of AEO. Two months in, a new client told me they found us through ChatGPT. That had never happened before. The monthly report makes it easy to see what is working and the team handles everything."</p>
+        <div class="review-author"><img class="review-avatar" src="https://i.pravatar.cc/88?img=47" alt="Sofia K."><div><div class="review-name">Sofia K.</div><div class="review-role">Founder · Accounting Firm, Thessaloniki</div></div></div>
       </div>
       <div class="review-card">
         <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <p class="review-text">"AI visibility is critical for our business. AEO Mentions got us cited on Google AI Overviews and Perplexity for several high-intent buying queries in under 90 days. The ROI compared to paid ads is not even close."</p>
-        <div class="review-author"><img class="review-avatar" src="https://i.pravatar.cc/88?img=60" alt="Oliver M."><div><div class="review-name">Oliver M.</div><div class="review-role">Director · Growth Stage Startup</div></div></div>
+        <p class="review-text">"We run a fintech startup and AI visibility is critical for us. AEO Mentions got us cited on Google AI Overviews and Perplexity for several high-intent queries in under 60 days. The ROI compared to paid ads is not even close."</p>
+        <div class="review-author"><img class="review-avatar" src="https://i.pravatar.cc/88?img=60" alt="Dimitris A."><div><div class="review-name">Dimitris A.</div><div class="review-role">CEO · Fintech Startup, Nicosia</div></div></div>
       </div>
     </div>
   </div>
@@ -652,8 +650,8 @@ footer p { font-family:'Spline Sans Mono',monospace; font-size:10px; color:rgba(
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long until I see my first AI citation?<span class="faq-icon">+</span></button><div class="faq-a">Most clients see their first citation within 60 to 90 days. The timeline depends on your niche competition and how quickly AI engines index new content. We track this monthly and show you exactly where you appear.</div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need to do anything once I sign up?<span class="faq-icon">+</span></button><div class="faq-a">Almost nothing. We need a short onboarding call to understand your business, target queries, and audience. After that we handle everything: research, writing, publishing, schema, and reporting. You receive a clean monthly report and that is it.</div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What if I want to cancel?<span class="faq-icon">+</span></button><div class="faq-a">You can cancel any time with 30 days notice. There are no long-term contracts. The content and placements we create for you remain live and continue working even after you cancel.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Which industries do you work with?<span class="faq-icon">+</span></button><div class="faq-a">We work with any SME or professional service business. We have particular experience with legal, accounting, finance, fintech, real estate, healthcare, and e-commerce. If your customers are asking AI for recommendations in your category, we can help.</div></li>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can you guarantee I will be cited?<span class="faq-icon">+</span></button><div class="faq-a">No ethical AEO provider can guarantee specific citations since AI engines make independent decisions. What we do guarantee is that we execute the right strategy every month, create the right content, and build the right authority signals. Based on our track record, clients start seeing citations within 90 days.</div></li>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Which industries do you work with?<span class="faq-icon">+</span></button><div class="faq-a">We work with any SME or professional service business. We have particular experience with legal, accounting, finance, fintech, real estate, healthcare, and e-commerce. If your customers are asking AI for recommendations in your category, we can help.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can you guarantee I will be cited?<span class="faq-icon">+</span></button><div class="faq-a">No ethical AEO provider can guarantee specific citations since AI engines make independent decisions. What we do guarantee is that we execute the right strategy every month, create the right content, and build the right authority signals. Based on our track record, clients start seeing citations within 90 days.</div></div>
   </div>
 </section>
 
@@ -672,7 +670,6 @@ footer p { font-family:'Spline Sans Mono',monospace; font-size:10px; color:rgba(
 
 
 <script>
-// FAQ accordion
 function toggleFaq(btn) {
   var item = btn.closest('.faq-item');
   var isOpen = item.classList.contains('open');
@@ -681,21 +678,6 @@ function toggleFaq(btn) {
   });
   if (!isOpen) item.classList.add('open');
 }
-
-// Smooth anchor scroll with nav offset (fallback if browser doesn't support scroll-behavior)
-document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-  link.addEventListener('click', function(e) {
-    var targetId = this.getAttribute('href');
-    if (targetId === '#' || targetId.length < 2) return;
-    var target = document.querySelector(targetId);
-    if (target) {
-      e.preventDefault();
-      var navHeight = 60;
-      var y = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-  });
-});
 </script>
 
 </body>
