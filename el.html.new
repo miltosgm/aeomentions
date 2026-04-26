@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AEO Mentions – Δείτε Παραπομπές από ΤΝ</title>
+<title>AEO Mentions – Get Cited by AI</title>
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;700;800;900&family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=Spline+Sans+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -240,6 +240,7 @@ nav {
 }
 .pkg-row.featured .pkg-row-cta:hover { background:#166534; border-color:#166534; }
 
+
 /* HOW */
 .how { max-width:1160px; margin:0 auto; padding:80px 56px; }
 .how h2 { font-size:44px; font-weight:900; letter-spacing:-0.04em; margin-bottom:48px; color:var(--ink); }
@@ -368,34 +369,34 @@ footer p { font-family:'Spline Sans Mono',monospace; font-size:10px; color:rgba(
     <div class="logo-name">AEO<span>Mentions</span></div>
   </div>
   <div class="nav-right">
-    <a href="#packages" class="nav-cta">Ξεκινήστε</a>
+    <a href="#packages" class="nav-cta">Get Started</a>
   </div>
 </nav>
 
 <section class="hero">
-  <div class="hero-top"><div class="hero-label">Βελτιστοποίηση Μηχανών Απαντήσεων</div></div>
-  <h1>Όταν οι Άνθρωποι Ρωτούν την ΑΙ<br><em>Εσείς Πρέπει<br>να Είστε η Απάντηση.</em></h1>
+  <div class="hero-top"><div class="hero-label">Answer Engine Optimization</div></div>
+  <h1>When People Ask AI<br><em>You Should<br>Be the Answer.</em></h1>
   <div class="hero-grid">
     <div>
-      <p class="hero-sub">Υπηρεσία πλήρους αναλαβης κάθε μήνα. Κάνουμε το brand σας να παρατίθεται στο Google AI Overviews, Perplexity, ChatGPT, Claude και Gemini, ώστε όταν κάποιος αναζητά αυτό που πουλάτε, εμφανίζεστε εκεί.</p>
+      <p class="hero-sub">Done-for-you monthly service. We get your business cited in Google AI Overviews, Perplexity, ChatGPT, Claude, and Gemini, so when someone searches for what you sell, your brand shows up.</p>
       <div class="cta-row">
-        <a href="#packages" class="btn-green">Δείτε τα Πακέτα</a>
-        <span class="cta-note">Από €500/μήνα · Χωρίς δεσμευτικές συμβάσεις</span>
+        <a href="#packages" class="btn-green">See Packages</a>
+        <span class="cta-note">From €500/month · No lock-in</span>
       </div>
     </div>
     <div class="score-card">
-      <div class="score-head"><div class="score-head-title">Ελέγχος Παραπομπών ΑΙ</div><div class="score-badge">Έλεγχος Σε Πραγματικό Χρόνο</div></div>
+      <div class="score-head"><div class="score-head-title">AI Citation Audit</div><div class="score-badge">Live Check</div></div>
       <div class="score-body">
-        <div class="score-row"><div class="score-row-left"><div class="engine-color ec-g"></div>Google AI Overviews</div><span class="score-status s-bad">Δεν παρατίθεστε</span></div>
-        <div class="score-row"><div class="score-row-left"><div class="engine-color ec-p"></div>Perplexity</div><span class="score-status s-bad">Δεν παρατίθεστε</span></div>
-        <div class="score-row"><div class="score-row-left"><div class="engine-color ec-c"></div>ChatGPT Search</div><span class="score-status s-bad">Δεν παρατίθεστε</span></div>
-        <div class="score-row"><div class="score-row-left"><div class="engine-color ec-claude"></div>Claude</div><span class="score-status s-bad">Δεν παρατίθεστε</span></div>
-        <div class="score-row"><div class="score-row-left"><div class="engine-color ec-gem"></div>Gemini</div><span class="score-status s-bad">Δεν παρατίθεστε</span></div>
+        <div class="score-row"><div class="score-row-left"><div class="engine-color ec-g"></div>Google AI Overviews</div><span class="score-status s-bad">Not cited</span></div>
+        <div class="score-row"><div class="score-row-left"><div class="engine-color ec-p"></div>Perplexity</div><span class="score-status s-bad">Not cited</span></div>
+        <div class="score-row"><div class="score-row-left"><div class="engine-color ec-c"></div>ChatGPT Search</div><span class="score-status s-bad">Not cited</span></div>
+        <div class="score-row"><div class="score-row-left"><div class="engine-color ec-claude"></div>Claude</div><span class="score-status s-bad">Not cited</span></div>
+        <div class="score-row"><div class="score-row-left"><div class="engine-color ec-gem"></div>Gemini</div><span class="score-status s-bad">Not cited</span></div>
       </div>
       <div class="score-foot">
-        <div class="score-foot-row"><span class="sfl">Μερίδιο Φωνής ΑΙ</span><span class="sfv">0%</span></div>
+        <div class="score-foot-row"><span class="sfl">AI Share of Voice</span><span class="sfv">0%</span></div>
         <div class="progress"><div class="progress-fill"></div></div>
-        <a href="#packages" class="fix-btn">Διορθώστε Αυτό Τώρα →</a>
+        <a href="#packages" class="fix-btn">Fix This Now →</a>
       </div>
     </div>
   </div>
@@ -403,65 +404,65 @@ footer p { font-family:'Spline Sans Mono',monospace; font-size:10px; color:rgba(
 
 <div class="proof-bar">
   <div class="proof-item"><div class="p-tri"></div>Google AI Overviews</div>
-  <div class="proof-item"><div class="p-tri"></div>Παραπομπές Perplexity</div>
+  <div class="proof-item"><div class="p-tri"></div>Perplexity Citations</div>
   <div class="proof-item"><div class="p-tri"></div>ChatGPT Search</div>
-  <div class="proof-item"><div class="p-tri"></div>Παραπομπές Claude</div>
-  <div class="proof-item"><div class="p-tri"></div>Αποτελέσματα Gemini</div>
-  <div class="proof-item"><div class="p-tri"></div>Μηνιαία Έκθεση</div>
-  <div class="proof-item"><div class="p-tri"></div>Τα Κάνουμε Εμείς</div>
+  <div class="proof-item"><div class="p-tri"></div>Claude Citations</div>
+  <div class="proof-item"><div class="p-tri"></div>Gemini Results</div>
+  <div class="proof-item"><div class="p-tri"></div>Monthly Reporting</div>
+  <div class="proof-item"><div class="p-tri"></div>Done For You</div>
 </div>
 
 <div class="stat-bar">
   <div class="stat-bar-inner">
-    <div class="stat-item"><div class="stat-num">68%</div><div class="stat-label">των αναζητήσεων τελειώνουν στη απάντηση της ΑΙ, χωρίς ποτέ να φτάσουν στο site σας</div></div>
-    <div class="stat-item"><div class="stat-num">5</div><div class="stat-label">μηχανές ΑΙ που επηρεάζουν τις αγοραστικές αποφάσεις κάθε ημέρα</div></div>
-    <div class="stat-item"><div class="stat-num">3x</div><div class="stat-label">περισσότερη εμπιστοσύνη αγοραστών στα brands που παρατίθενται από ΑΙ σε σχέση με διαφημίσεις</div></div>
-    <div class="stat-item"><div class="stat-num">90d</div><div class="stat-label">μέσος χρόνος έως την πρώτη παραπομπή στην ΑΙ μετά την έναρξή μας</div></div>
+    <div class="stat-item"><div class="stat-num">68%</div><div class="stat-label">of searches now end at the AI answer, never reaching your site</div></div>
+    <div class="stat-item"><div class="stat-num">5</div><div class="stat-label">AI engines that now influence buying decisions daily</div></div>
+    <div class="stat-item"><div class="stat-num">3x</div><div class="stat-label">more buyer trust in brands cited by AI vs paid ads</div></div>
+    <div class="stat-item"><div class="stat-num">90d</div><div class="stat-label">average time to your first AI citation after we start</div></div>
   </div>
 </div>
 
 <!-- VISUALS SECTION -->
 <section class="visuals-section" id="visuals">
   <div class="visuals-inner">
-    <div class="sec-tag">Δείτε το Σε Δράση</div>
-    <h2 style="font-size:44px;font-weight:900;letter-spacing:-0.04em;color:var(--ink);">Είστε η Απάντηση<br>που Δίνει η ΑΙ ή Αόρατοι;</h2>
-    <p class="visuals-sub">Αυτό συμβαίνει όταν ένας δυνητικός πελάτης ζητά από μια μηχανή ΑΙ μια σύσταση στο χώρο σας σήμερα.</p>
+    <div class="sec-tag">See It In Action</div>
+    <h2 style="font-size:44px;font-weight:900;letter-spacing:-0.04em;color:var(--ink);">Are You the Answer<br>AI Gives or Invisible?</h2>
+    <p class="visuals-sub">This is what happens when a potential customer asks an AI engine for a recommendation in your niche right now.</p>
 
     <div class="visual-block">
-      <div class="visual-label">Πώς φαίνεται στο ChatGPT και Perplexity</div>
+      <div class="visual-label">How it looks in ChatGPT and Perplexity</div>
       <div class="vis-grid-2">
         <div class="vis-card">
-          <div class="vis-card-head vis-bad"><div class="vis-dot vis-dot-bad"></div><span>Χωρίς AEO Mentions</span></div>
+          <div class="vis-card-head vis-bad"><div class="vis-dot vis-dot-bad"></div><span>Without AEO Mentions</span></div>
           <div class="vis-chat-wrap">
             <div class="vis-bubble-out"></div>
             <div class="vis-bubble-in-row">
-              <div class="vis-ai-avatar">ΑΙ</div>
+              <div class="vis-ai-avatar">AI</div>
               <div class="vis-bubble-in">
-                <div style="margin-bottom:10px;font-size:13px;line-height:1.6;">Ορίστε μερικές εταιρείες ακινήτων στο Λονδίνο που αξίζει να εξετάσετε:</div>
+                <div style="margin-bottom:10px;font-size:13px;line-height:1.6;">Here are some real estate agencies in London worth considering:</div>
                 <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">Foxtons</span><span class="vis-result-url">foxtons.co.uk</span></div>
                 <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">Knight Frank</span><span class="vis-result-url">knightfrank.co.uk</span></div>
                 <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">Savills</span><span class="vis-result-url">savills.co.uk</span></div>
-                <div class="vis-status-pill vis-status-bad">Η επιχείρησή σας: δεν αναφέρεται</div>
+                <div class="vis-status-pill vis-status-bad">Your business: not mentioned</div>
               </div>
             </div>
           </div>
         </div>
         <div class="vis-card">
-          <div class="vis-card-head vis-good"><div class="vis-dot vis-dot-good"></div><span>Με AEO Mentions</span></div>
+          <div class="vis-card-head vis-good"><div class="vis-dot vis-dot-good"></div><span>With AEO Mentions</span></div>
           <div class="vis-chat-wrap">
             <div class="vis-bubble-out"></div>
             <div class="vis-bubble-in-row">
-              <div class="vis-ai-avatar">ΑΙ</div>
+              <div class="vis-ai-avatar">AI</div>
               <div class="vis-bubble-in">
-                <div style="margin-bottom:10px;font-size:13px;line-height:1.6;">Ορίστε μερικές εταιρείες ακινήτων στο Λονδίνο που αξίζει να εξετάσετε:</div>
+                <div style="margin-bottom:10px;font-size:13px;line-height:1.6;">Here are some real estate agencies in London worth considering:</div>
                 <div class="vis-result-row vis-result-top">
-                  <div class="vis-top-tag">Κορυφαίο αποτέλεσμα</div>
-                  <span class="vis-result-name" style="color:#27500A;">Όνομα της Επιχείρησής σας</span>
-                  <span class="vis-result-url" style="color:#3B6D11;">youragency.co.uk · Παρατιθέμενη πηγή</span>
+                  <div class="vis-top-tag">Top result</div>
+                  <span class="vis-result-name" style="color:#27500A;">Your Business Name</span>
+                  <span class="vis-result-url" style="color:#3B6D11;">youragency.co.uk · Cited source</span>
                 </div>
                 <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">Foxtons</span><span class="vis-result-url">foxtons.co.uk</span></div>
                 <div class="vis-result-row vis-result-neutral"><span class="vis-result-name">Knight Frank</span><span class="vis-result-url">knightfrank.co.uk</span></div>
-                <div class="vis-status-pill vis-status-good">Η επιχείρησή σας: παρατίθεται #1</div>
+                <div class="vis-status-pill vis-status-good">Your business: cited #1</div>
               </div>
             </div>
           </div>
@@ -470,46 +471,46 @@ footer p { font-family:'Spline Sans Mono',monospace; font-size:10px; color:rgba(
     </div>
 
     <div class="visual-block">
-      <div class="visual-label">Πώς φαίνεται στο Google AI Overviews</div>
+      <div class="visual-label">How it looks in Google AI Overviews</div>
       <div class="vis-grid-2">
         <div class="vis-card">
-          <div class="vis-card-head vis-bad"><div class="vis-dot vis-dot-bad"></div><span>Χωρίς AEO Mentions</span></div>
+          <div class="vis-card-head vis-bad"><div class="vis-dot vis-dot-bad"></div><span>Without AEO Mentions</span></div>
           <div style="padding:14px;">
             <div class="vis-browser-bar">
               <div class="vis-traffic-lights"><div class="vis-tl vis-tl-r"></div><div class="vis-tl vis-tl-y"></div><div class="vis-tl vis-tl-g"></div></div>
               <div class="vis-url-bar">google.com</div>
             </div>
-            <div class="vis-search-bar">καλύτερη εταιρεία ακινήτων λονδίνο</div>
+            <div class="vis-search-bar">best real estate agency london</div>
             <div class="vis-ai-box">
-              <div class="vis-ai-box-label">ΑΙ Overview</div>
-              <div style="font-size:12px;color:var(--ink);line-height:1.65;margin-bottom:10px;">Οι κορυφαίες εταιρείες ακινήτων στο Λονδίνο περιλαμβάνουν τα Foxtons, Knight Frank, Savills και Hamptons, όλες προσφέρουν υπηρεσίες ακινήτων σε όλο το Λονδίνο και τη Νοτιοανατολική Αγγλία.</div>
+              <div class="vis-ai-box-label">AI Overview</div>
+              <div style="font-size:12px;color:var(--ink);line-height:1.65;margin-bottom:10px;">Top real estate agencies in London include Foxtons, Knight Frank, Savills, and Hamptons, all offering property services across Greater London and the South East.</div>
               <div class="vis-source-pills">
                 <div class="vis-source-pill">foxtons.co.uk</div>
                 <div class="vis-source-pill">knightfrank.co.uk</div>
                 <div class="vis-source-pill">savills.co.uk</div>
               </div>
             </div>
-            <div class="vis-verdict vis-verdict-bad">Η επιχείρησή σας δεν περιλαμβάνεται</div>
+            <div class="vis-verdict vis-verdict-bad">Your business not included</div>
           </div>
         </div>
         <div class="vis-card">
-          <div class="vis-card-head vis-good"><div class="vis-dot vis-dot-good"></div><span>Με AEO Mentions</span></div>
+          <div class="vis-card-head vis-good"><div class="vis-dot vis-dot-good"></div><span>With AEO Mentions</span></div>
           <div style="padding:14px;">
             <div class="vis-browser-bar">
               <div class="vis-traffic-lights"><div class="vis-tl vis-tl-r"></div><div class="vis-tl vis-tl-y"></div><div class="vis-tl vis-tl-g"></div></div>
               <div class="vis-url-bar">google.com</div>
             </div>
-            <div class="vis-search-bar">καλύτερη εταιρεία ακινήτων λονδίνο</div>
+            <div class="vis-search-bar">best real estate agency london</div>
             <div class="vis-ai-box vis-ai-box-good">
-              <div class="vis-ai-box-label">ΑΙ Overview</div>
-              <div style="font-size:12px;color:var(--ink);line-height:1.65;margin-bottom:10px;"><span class="vis-highlight">Η Επιχείρησή σας</span> προτείνεται ευρέως ως μια κορυφαία εταιρεία ακινήτων στο Λονδίνο, γνωστή για εμπειρία premium. Άλλες αξιόλογες εταιρείες περιλαμβάνουν τα Foxtons και Knight Frank.</div>
+              <div class="vis-ai-box-label">AI Overview</div>
+              <div style="font-size:12px;color:var(--ink);line-height:1.65;margin-bottom:10px;"><span class="vis-highlight">Your Agency</span> is widely recommended as a top real estate agency in London, known for premium property expertise. Other notable agencies include Foxtons and Knight Frank.</div>
               <div class="vis-source-pills">
                 <div class="vis-source-pill vis-source-pill-good">youragency.co.uk</div>
                 <div class="vis-source-pill">foxtons.co.uk</div>
                 <div class="vis-source-pill">knightfrank.co.uk</div>
               </div>
             </div>
-            <div class="vis-verdict vis-verdict-good">Η επιχείρησή σας παρατίθεται ως πρώτη πηγή</div>
+            <div class="vis-verdict vis-verdict-good">Your business cited as first source</div>
           </div>
         </div>
       </div>
@@ -519,42 +520,42 @@ footer p { font-family:'Spline Sans Mono',monospace; font-size:10px; color:rgba(
 
 <section class="problem-section">
   <div>
-    <div class="sec-tag">Το Πρόβλημα</div>
-    <h2>Η ΑΙ αντικαθιστά το Google.<br>Είστε σε αυτό;</h2>
+    <div class="sec-tag">The Problem</div>
+    <h2>AI is replacing Google.<br>Are you in it?</h2>
   </div>
   <ul class="prob-list">
-    <li class="prob-li"><div class="prob-bullet"></div>Οι πελάτες ρωτούν το ChatGPT «καλύτερη [υπηρεσία σας] κοντά μου» και είστε αόρατοι</li>
-    <li class="prob-li"><div class="prob-bullet"></div>Οι ανταγωνιστές σας παρατίθενται ως αξιόπιστες πηγές στις απαντήσεις της ΑΙ</li>
-    <li class="prob-li"><div class="prob-bullet"></div>Το παραδοσιακό SEO δεν εγγυάται πλέον αναφορές στην ΑΙ</li>
-    <li class="prob-li"><div class="prob-bullet"></div>Οι απαντήσεις που δημιουργούνται από ΑΙ είναι η νέα πρώτη σελίδα της αναζήτησης</li>
-    <li class="prob-li"><div class="prob-bullet"></div>Οι περισσότερες επιχειρήσεις δεν έχουν ακόμη στρατηγική γι αυτό</li>
+    <li class="prob-li"><div class="prob-bullet"></div>Customers ask ChatGPT "best [your service] near me" and you're invisible</li>
+    <li class="prob-li"><div class="prob-bullet"></div>Competitors are being cited as trusted sources in AI answers</li>
+    <li class="prob-li"><div class="prob-bullet"></div>Traditional SEO no longer guarantees AI mentions</li>
+    <li class="prob-li"><div class="prob-bullet"></div>AI-generated answers are the new first page of search</li>
+    <li class="prob-li"><div class="prob-bullet"></div>Most businesses have zero strategy for this yet</li>
   </ul>
 </section>
 
 <section class="ba-section">
   <div class="ba-inner">
-    <div class="sec-tag">Πριν και Μετά</div>
-    <h2>Πώς Φαίνεται η Αναζήτηση ΑΙ<br>Χωρίς Εσάς έναντι Με Εσάς</h2>
+    <div class="sec-tag">Before and After</div>
+    <h2>What AI Search Looks Like<br>Without You vs With You</h2>
     <div class="ba-grid">
       <div class="ba-col ba-before">
-        <div class="ba-col-head"><span>✕</span> Χωρίς AEO Mentions</div>
+        <div class="ba-col-head"><span>✕</span> Without AEO Mentions</div>
         <ul class="ba-items">
-          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/></svg></span>Το brand σας είναι αόρατο όταν οι πελάτες ζητούν από την ΑΙ συστάσεις</li>
-          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg></span>Οι ανταγωνιστές παρατίθενται ως η αξιόπιστη απάντηση στο χώρο σας</li>
-          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>Συνεχίζετε να πληρώνετε για διαφημίσεις ενώ η ΑΙ στέλνει leads σε άλλους δωρεάν</li>
-          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg></span>Χωρίς δομημένα δεδομένα, χωρίς παρουσία entity, χωρίς κύρος πηγής</li>
-          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>Καμία ιδέα πόσο συχνά ή πού η ΑΙ αναφέρει την κατηγορία σας</li>
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/></svg></span>Your brand is invisible when customers ask AI for recommendations</li>
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg></span>Competitors get cited as the trusted answer in your niche</li>
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>You keep paying for ads while AI sends leads to others for free</li>
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg></span>No schema, no entity presence, no source authority</li>
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>Zero idea how often or where AI mentions your category</li>
         </ul>
       </div>
       <div class="ba-divider"><div class="ba-vs">VS</div></div>
       <div class="ba-col ba-after">
-        <div class="ba-col-head"><span>✓</span> Με AEO Mentions</div>
+        <div class="ba-col-head"><span>✓</span> With AEO Mentions</div>
         <ul class="ba-items">
-          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>Το brand σας εμφανίζεται ως παρατιθέμενη πηγή σε όλες τις 5 κύριες μηχανές ΑΙ</li>
-          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>Κατέχετε την απάντηση της ΑΙ για τα σημαντικά ερωτήματα αγοράς σας</li>
-          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>Η οργανική κίνηση ΑΙ αυξάνεται μήνα με το μήνα χωρίς επιπλέον κόστος</li>
-          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M5 6l7-3 7 3"/><path d="M4 10v11"/><path d="M20 10v11"/><path d="M8 14v3"/><path d="M12 14v3"/><path d="M16 14v3"/></svg></span>Ισχυρή παρουσία entity, δομημένα δεδομένα και κύρος σε αξιόπιστες πλατφόρμες</li>
-          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>Μηνιαία αναφορά που δείχνει ακριβώς πού εμφανίζεστε και τι έρχεται</li>
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>Your brand appears as a cited source across all 5 major AI engines</li>
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>You own the AI answer for your key buying queries</li>
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>Organic AI traffic compounds month over month at no extra cost</li>
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M5 6l7-3 7 3"/><path d="M4 10v11"/><path d="M20 10v11"/><path d="M8 14v3"/><path d="M12 14v3"/><path d="M16 14v3"/></svg></span>Strong entity presence, schema, and authority on trusted platforms</li>
+          <li class="ba-item"><span class="ba-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>Monthly report showing exactly where you appear and what is next</li>
         </ul>
       </div>
     </div>
@@ -564,116 +565,118 @@ footer p { font-family:'Spline Sans Mono',monospace; font-size:10px; color:rgba(
 <section class="pkg-section" id="packages">
   <div class="pkg-inner">
     <div class="pkg-head">
-      <div class="sec-tag">Επιλέξτε το Πακέτο σας</div>
-      <h2>Υπηρεσία Ορατότητας στην ΑΙ</h2>
+      <div class="sec-tag">Choose Your Plan</div>
+      <h2>AI Visibility Retainer</h2>
     </div>
     <div class="pkg-rows">
       <div class="pkg-row">
         <div class="pkg-left">
-          <div class="pkg-name">Εκκίνηση</div>
-          <div class="pkg-tier">Επίπεδο I · Ανακαλύφθητε</div>
+          <div class="pkg-name">Starter</div>
+          <div class="pkg-tier">Tier I · Get Found</div>
         </div>
-        <div class="pkg-desc">5 παρακολουθούμενα prompts, 2 σελίδες πηγής ανά μήνα, δομημένα δεδομένα, 1 τοποθέτηση ανά μήνα, έκθεση 1 σελίδας. Για επιχειρήσεις που ξεκινούν.</div>
+        <div class="pkg-desc">5 tracked prompts, 2 monthly source pages, schema markup, 1 monthly placement, 1-page report. For businesses dipping a toe.</div>
         <div class="pkg-right">
           <div class="pkg-price">€500</div>
-          <div class="pkg-period">ανά μήνα · χωρίς δεσμευτικές συμβάσεις</div>
+          <div class="pkg-period">per month · no lock-in</div>
         </div>
-        <a href="https://buy.stripe.com/cNi7sL2S0czG75Ydw887K00" class="pkg-row-cta">Ξεκινήστε με Εκκίνηση →</a>
+        <a href="https://buy.stripe.com/cNi7sL2S0czG75Ydw887K00" class="pkg-row-cta">Start with Starter →</a>
       </div>
       <div class="pkg-row featured">
         <div class="pkg-left">
-          <div class="pkg-name">Βασικό</div>
-          <div class="pkg-tier">Επίπεδο II · <strong>Το Πιο Δημοφιλές</strong> · Αναφέρεστε</div>
+          <div class="pkg-name">Core</div>
+          <div class="pkg-tier">Tier II · <strong>Most Chosen</strong> · Get Mentioned</div>
         </div>
-        <div class="pkg-desc">10 παρακολουθούμενα prompts, 4 σελίδες πηγής, πλήρη δομημένα δεδομένα και ενίσχυση entity, 2 τοποθετήσεις, ανάλυση κενού ανταγωνισμού, μηνιαία κλήση στρατηγικής. Το ιδανικό σημείο.</div>
+        <div class="pkg-desc">10 tracked prompts, 4 source pages, full schema and entity reinforcement, 2 placements, competitor gap report, monthly strategy call. The sweet spot.</div>
         <div class="pkg-right">
           <div class="pkg-price">€900</div>
-          <div class="pkg-period">ανά μήνα · χωρίς δεσμευτικές συμβάσεις</div>
+          <div class="pkg-period">per month · no lock-in</div>
         </div>
-        <a href="https://buy.stripe.com/9B6cN5gIQ43a3TM4ZC87K01" class="pkg-row-cta">Επιλέξτε Βασικό →</a>
+        <a href="https://buy.stripe.com/9B6cN5gIQ43a3TM4ZC87K01" class="pkg-row-cta">Choose Core →</a>
       </div>
       <div class="pkg-row">
         <div class="pkg-left">
           <div class="pkg-name">Premium</div>
-          <div class="pkg-tier">Επίπεδο III · Γίνετε Κυρίαρχοι</div>
+          <div class="pkg-tier">Tier III · Get Dominant</div>
         </div>
-        <div class="pkg-desc">20 prompts σε πολλές γλώσσες, 8 σελίδες + 4 τοποθετήσεις, εργασία Wikidata/Crunchbase/GBP entity, τοποθετήσεις PR, δι-εβδομαδιαίες κλήσεις, προσαρμοσμένο dashboard, υποστήριξη προτεραιότητας.</div>
+        <div class="pkg-desc">20 prompts across languages, 8 pages + 4 placements, Wikidata / Crunchbase / GBP entity work, PR placements, bi-weekly calls, custom dashboard, priority support.</div>
         <div class="pkg-right">
           <div class="pkg-price">€1,800</div>
-          <div class="pkg-period">ανά μήνα · ουρά προτεραιότητας</div>
+          <div class="pkg-period">per month · priority queue</div>
         </div>
-        <a href="https://buy.stripe.com/00waEX508gPWeyq77K87K02" class="pkg-row-cta">Επιλέξτε Premium →</a>
+        <a href="https://buy.stripe.com/00waEX508gPWeyq77K87K02" class="pkg-row-cta">Go Premium →</a>
       </div>
     </div>
   </div>
 </section>
 
 <section class="how" id="how">
-  <div class="sec-tag">Πώς Λειτουργεί</div>
-  <h2>Τέσσερα Βήματα. Κάθε Μήνα. Τελειώνει.</h2>
+  <div class="sec-tag">How It Works</div>
+  <h2>Four Steps. Monthly. Done.</h2>
   <div class="steps">
-    <div class="step"><div class="step-n">01</div><h3>Βρίσκουμε τα Ερωτήματά σας</h3><p>Ερευνούμε τα ακριβή ερωτήματα που κάνουν οι πελάτες σας στις μηχανές ΑΙ σχετικά με τον κλάδο και την τοποθεσία σας.</p></div>
-    <div class="step"><div class="step-n">02</div><h3>Γράφουμε το Περιεχόμενο</h3><p>Δημιουργούμε βελτιστοποιημένες σελίδες πηγής που δομούνται συγκεκριμένα για να παρατίθενται από μηχανές ΑΙ ως αξιόπιστες απαντήσεις.</p></div>
-    <div class="step"><div class="step-n">03</div><h3>Δημοσιεύουμε + Τοποθετούμε</h3><p>Δημοσιεύουμε στο site σας με δομημένα δεδομένα και τοποθετούμε περιεχόμενο σε πλατφόρμες εξωτερικής υψηλής αρχής.</p></div>
-    <div class="step"><div class="step-n">04</div><h3>Αναφέρουμε Αποτελέσματα</h3><p>Μηνιαία αναφορά που δείχνει πού εμφανίζεστε, πόσο συχνά και τι στοχεύουμε στη συνέχεια.</p></div>
+    <div class="step"><div class="step-n">01</div><h3>We Find Your Queries</h3><p>Research the exact questions your customers are asking AI engines about your niche and location.</p></div>
+    <div class="step"><div class="step-n">02</div><h3>We Write the Content</h3><p>Create optimized source pages structured specifically to get cited by AI engines as trusted answers.</p></div>
+    <div class="step"><div class="step-n">03</div><h3>We Publish + Place</h3><p>Publish on your site with schema markup and place content on high-authority external platforms.</p></div>
+    <div class="step"><div class="step-n">04</div><h3>We Report Results</h3><p>Monthly report showing where you appear, how often, and what we are targeting next.</p></div>
   </div>
 </section>
 
 <section class="reviews-section">
   <div class="reviews-inner">
-    <div class="sec-tag">Αποτελέσματα Πελατών</div>
-    <h2>Τι Λένε οι Πελάτες Μας</h2>
+    <div class="sec-tag">Client Results</div>
+    <h2>What Our Clients Say</h2>
     <div class="reviews-grid">
       <div class="review-card">
         <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <p class="review-text">«Εντός 6 εβδομάδων εμφανιζόμασταν σε απαντήσεις Perplexity για τρία από τα κύρια ερωτήματα υπηρεσιών μας. Οι ανταγωνιστές μας κάνουν παραδοσιακό SEO για χρόνια και είναι ακόμη αόρατοι στην ΑΙ. Αυτό είναι το μεγαλύτερο πλεονέκτημα που έχουμε τώρα.»</p>
-        <div class="review-author"><img class="review-avatar" src="https://i.pravatar.cc/88?img=12" alt="James H."><div><div class="review-name">James H.</div><div class="review-role">Διευθύνων Σύμβουλος · Εταιρεία Υπηρεσιών B2B</div></div></div>
+        <p class="review-text">"Within 6 weeks of starting we were showing up in Perplexity answers for three of our core service queries. Our competitors have been doing traditional SEO for years and they are still invisible in AI. This is the biggest edge we have right now."</p>
+        <div class="review-author"><img class="review-avatar" src="https://i.pravatar.cc/88?img=12" alt="James H."><div><div class="review-name">James H.</div><div class="review-role">Managing Director · B2B Services Firm</div></div></div>
       </div>
       <div class="review-card">
         <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <p class="review-text">«Ήμουν σκεπτικός στην αρχή γιατί δεν είχα ακούσει ποτέ για AEO. Δύο μήνες μετά, ένας νέος πελάτης μου είπε ότι μας βρήκε μέσω ChatGPT. Αυτό δεν είχε ξανασυμβεί. Η μηνιαία αναφορά διευκολύνει να δω τι λειτουργεί και η ομάδα χειρίζεται τα πάντα.»</p>
-        <div class="review-author"><img class="review-avatar" src="https://i.pravatar.cc/88?img=47" alt="Emma R."><div><div class="review-name">Emma R.</div><div class="review-role">Ιδρυτής · Ανεξάρτητη Σύμβουλος</div></div></div>
+        <p class="review-text">"I was skeptical at first because I had never heard of AEO. Two months in, a new customer told me they found us through ChatGPT. That had never happened before. The monthly report makes it easy to see what is working and the team handles everything."</p>
+        <div class="review-author"><img class="review-avatar" src="https://i.pravatar.cc/88?img=47" alt="Emma R."><div><div class="review-name">Emma R.</div><div class="review-role">Founder · Boutique Consultancy</div></div></div>
       </div>
       <div class="review-card">
         <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <p class="review-text">«Η ορατότητα στην ΑΙ είναι κρίσιμη για την επιχείρησή μας. Το AEO Mentions μας έκανε να παρατίθεστε στο Google AI Overviews και Perplexity για πολλά ερωτήματα αγοράς υψηλής πρόθεσης σε λιγότερο από 90 ημέρες. Το ROI σε σχέση με διαφημίσεις είναι σχεδόν ανάλογο.»</p>
-        <div class="review-author"><img class="review-avatar" src="https://i.pravatar.cc/88?img=60" alt="Oliver M."><div><div class="review-name">Oliver M.</div><div class="review-role">Διευθυντής · Growth Stage Startup</div></div></div>
+        <p class="review-text">"AI visibility is critical for our business. AEO Mentions got us cited on Google AI Overviews and Perplexity for several high-intent buying queries in under 90 days. The ROI compared to paid ads is not even close."</p>
+        <div class="review-author"><img class="review-avatar" src="https://i.pravatar.cc/88?img=60" alt="Oliver M."><div><div class="review-name">Oliver M.</div><div class="review-role">Director · Growth Stage Startup</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
 <section class="faq-section">
-  <div class="sec-tag">ΣΥΧ. ΕΡΩΤΉΣΕΙΣ</div>
-  <h2>Συχνές Ερωτήσεις</h2>
+  <div class="sec-tag">FAQ</div>
+  <h2>Common Questions</h2>
   <div class="faq-list">
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Πώς διαφέρει το AEO από το κανονικό SEO;<span class="faq-icon">+</span></button><div class="faq-a">Το παραδοσιακό SEO σας κατατάσσει στους μπλε συνδέσμους του Google. Το AEO σας κάνει να παρατίθεστε ως αξιόπιστη πηγή εντός απαντήσεων που δημιουργούνται από ΑΙ στο Google, Perplexity, ChatGPT, Claude και Gemini. Αυτές είναι θεμελιακά διαφορετικές τοποθετήσεις και απαιτούν διαφορετικές στρατηγικές. Οι περισσότερες αγορές SEO δεν το προσφέρουν ακόμη.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Πόσο καιρό μέχρι να δω την πρώτη παραπομπή ΑΙ;<span class="faq-icon">+</span></button><div class="faq-a">Οι περισσότεροι πελάτες βλέπουν την πρώτη παραπομπή εντός 60 έως 90 ημερών. Ο χρόνος εξαρτάται από τον ανταγωνισμό του κλάδου σας και πόσο γρήγορα ευρετηριάζουν οι μηχανές ΑΙ νέο περιεχόμενο. Το παρακολουθούμε μηνιαίως και σας δείχνουμε ακριβώς πού εμφανίζεστε.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Πρέπει να κάνω κάτι αφού εγγραφώ;<span class="faq-icon">+</span></button><div class="faq-a">Σχεδόν τίποτα. Χρειαζόμαστε μια σύντομη κλήση onboarding για να κατανοήσουμε την επιχείρησή σας, τα ερωτήματα στόχου και το κοινό. Μετά από αυτό χειριζόμαστε τα πάντα: έρευνα, γραφή, δημοσίευση, δομημένα δεδομένα και αναφορά. Λαμβάνετε μια καθαρή μηνιαία έκθεση και τέλος.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Τι αν θέλω να ακυρώσω;<span class="faq-icon">+</span></button><div class="faq-a">Μπορείτε να ακυρώσετε ανά πάσα στιγμή με ειδοποίηση 30 ημερών. Δεν υπάρχουν δεσμευτικές συμβάσεις. Το περιεχόμενο και οι τοποθετήσεις που δημιουργούμε παραμένουν ζωντανές και συνεχίζουν να λειτουργούν ακόμη και μετά την ακύρωση.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Ποιες βιομηχανίες εξυπηρετείτε;<span class="faq-icon">+</span></button><div class="faq-a">Δουλεύουμε με κάθε ΜΜΕ ή επιχείρηση επαγγελματικών υπηρεσιών. Έχουμε ιδιαίτερη εμπειρία στο νομικό, λογιστικό, χρηματοοικονομικό, fintech, ακίνητα, υγεία και ηλεκτρονικό εμπόριο. Αν οι πελάτες σας ζητούν από την ΑΙ συστάσεις στη δική σας κατηγορία, μπορούμε να βοηθήσουμε.</div></li>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Μπορείτε να εγγυηθείτε ότι θα παρατίθεμαι;<span class="faq-icon">+</span></button><div class="faq-a">Κανένας ηθικός πάροχος AEO δεν μπορεί να εγγυηθεί συγκεκριμένες παραπομπές αφού οι μηχανές ΑΙ λαμβάνουν ανεξάρτητες αποφάσεις. Αυτό που εγγυόμαστε είναι ότι εκτελούμε τη σωστή στρατηγική κάθε μήνα, δημιουργούμε το σωστό περιεχόμενο και χτίζουμε τα σωστά σήματα κύρους. Με βάση το αρχείο μας, οι πελάτες αρχίζουν να βλέπουν παραπομπές εντός 90 ημερών.</div></li>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How is AEO different from regular SEO?<span class="faq-icon">+</span></button><div class="faq-a">Traditional SEO gets you ranked in Google's blue links. AEO gets you cited as a trusted source inside AI-generated answers on Google, Perplexity, ChatGPT, Claude, and Gemini. These are fundamentally different placements and require different strategies. Most SEO agencies do not offer this yet.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long until I see my first AI citation?<span class="faq-icon">+</span></button><div class="faq-a">Most clients see their first citation within 60 to 90 days. The timeline depends on your niche competition and how quickly AI engines index new content. We track this monthly and show you exactly where you appear.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need to do anything once I sign up?<span class="faq-icon">+</span></button><div class="faq-a">Almost nothing. We need a short onboarding call to understand your business, target queries, and audience. After that we handle everything: research, writing, publishing, schema, and reporting. You receive a clean monthly report and that is it.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What if I want to cancel?<span class="faq-icon">+</span></button><div class="faq-a">You can cancel any time with 30 days notice. There are no long-term contracts. The content and placements we create for you remain live and continue working even after you cancel.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Which industries do you work with?<span class="faq-icon">+</span></button><div class="faq-a">We work with any SME or professional service business. We have particular experience with legal, accounting, finance, fintech, real estate, healthcare, and e-commerce. If your customers are asking AI for recommendations in your category, we can help.</div></li>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can you guarantee I will be cited?<span class="faq-icon">+</span></button><div class="faq-a">No ethical AEO provider can guarantee specific citations since AI engines make independent decisions. What we do guarantee is that we execute the right strategy every month, create the right content, and build the right authority signals. Based on our track record, clients start seeing citations within 90 days.</div></li>
   </div>
 </section>
 
 <section class="cta-section" id="contact">
-  <h2>Ξεκινήστε να <em>Παρατίθεστε από την ΑΙ</em><br>αυτό το Μήνα.</h2>
+  <h2>Start Getting <em>Cited by AI</em><br>This Month.</h2>
   <div class="cta-right">
-    <p>Χωρίς δεσμευτικές συμβάσεις. Ακύρωση ανά πάσα στιγμή.<br>Τα αποτελέσματα είναι ορατά εντός 90 ημερών.</p>
-    <a href="mailto:hello@aeomentions.com" class="btn-dark-lg">Κλείστε μια Δωρεάν Κλήση Ελέγχου</a>
+    <p>No long contracts. Cancel anytime.<br>Results visible within 90 days.</p>
+    <a href="mailto:hello@aeomentions.com" class="btn-dark-lg">Book a Free Audit Call</a>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 AEOMENTIONS · ΟΛΕΣ ΟΙ ΔΙΚΑΙΩΜΑΤΑ ΔΙΑΤΗΡΟΥΝΤΑΙ</p>
+  <p>© 2026 AEOMENTIONS · ALL RIGHTS RESERVED</p>
   <div style="display:flex; gap:12px; font-family:'Spline Sans Mono',monospace; font-size:10px;">
-    <a href="index.html" style="color:rgba(255,255,255,0.3); text-decoration:none; transition:color 0.2s;">English</a>
+    <span style="color:rgba(255,255,255,0.5);">English</span>
     <span style="color:rgba(255,255,255,0.1);">·</span>
-    <span style="color:rgba(255,255,255,0.5);">Ελληνικά</span>
+    <a href="el.html" style="color:rgba(255,255,255,0.3); text-decoration:none; transition:color 0.2s;">Ελληνικά</a>
   </div>
 </footer>
 
+
 <script>
+// FAQ accordion
 function toggleFaq(btn) {
   var item = btn.closest('.faq-item');
   var isOpen = item.classList.contains('open');
@@ -683,6 +686,7 @@ function toggleFaq(btn) {
   if (!isOpen) item.classList.add('open');
 }
 
+// Smooth anchor scroll with nav offset (fallback if browser doesn't support scroll-behavior)
 document.querySelectorAll('a[href^="#"]').forEach(function(link) {
   link.addEventListener('click', function(e) {
     var targetId = this.getAttribute('href');
