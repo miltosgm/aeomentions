@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout – AEO Mentions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Epilogue', -apple-system, sans-serif;
+            background: linear-gradient(135deg, #F6F3EE 0%, #EDE9E1 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .modal {
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 20px 60px rgba(20, 18, 16, 0.15);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .modal-header {
+            margin-bottom: 30px;
+        }
+        
+        .modal h1 {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+            color: #141210;
+        }
+        
+        .modal h2 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #15803D;
+            margin-bottom: 5px;
+        }
+        
+        .modal p {
+            font-size: 13px;
+            color: rgba(20, 18, 16, 0.6);
+            line-height: 1.6;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #141210;
+            margin-bottom: 8px;
+        }
+        
+        input[type="email"] {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid rgba(20, 18, 16, 0.15);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Epilogue', sans-serif;
+            transition: all 0.2s;
+        }
+        
+        input[type="email"]:focus {
+            outline: none;
+            border-color: #15803D;
+            box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.1);
+        }
+        
+        .btn-proceed {
+            width: 100%;
+            padding: 14px 20px;
+            background: #15803D;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .btn-proceed:hover {
+            background: #166534;
+        }
+        
+        .btn-proceed:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .error {
+            color: #DC2626;
+            font-size: 12px;
+            margin-top: 8px;
+            display: none;
+        }
+        
+        .error.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal">
+        <div class="modal-header">
+            <h2 id="tierLabel">STARTER PLAN</h2>
+            <h1>Complete Your Purchase</h1>
+            <p>Enter your email to proceed with payment and get started with AEO Mentions.</p>
+        </div>
+        
+        <form id="checkoutForm">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="you@example.com" 
+                    required 
+                    autofocus
+                >
+                <div class="error" id="emailError"></div>
+            </div>
+            
+            <button type="submit" class="btn-proceed" id="proceedBtn">
+                Proceed to Payment →
+            </button>
+        </form>
+    </div>
+
+    <script>
+        // Get tier and stripe link from URL
+        const params = new URLSearchParams(window.location.search);
+        const tier = params.get('tier') || 'starter';
+        const stripeLink = params.get('link');
+        
+        const tierLabels = {
+            'starter': { label: 'STARTER PLAN', price: '€500/month' },
+            'core': { label: 'CORE PLAN', price: '€900/month' },
+            'premium': { label: 'PREMIUM PLAN', price: '€1,800/month' }
+        };
+        
+        const stripeLinks = {
+            'starter': 'https://buy.stripe.com/cNi7sL2S0czG75Ydw887K00',
+            'core': 'https://buy.stripe.com/9B6cN5gIQ43a3TM4ZC87K01',
+            'premium': 'https://buy.stripe.com/00waEX508gPWeyq77K87K02'
+        };
+        
+        const tierInfo = tierLabels[tier] || tierLabels.starter;
+        const finalStripeLink = stripeLink || stripeLinks[tier] || stripeLinks.starter;
+        
+        // Set tier label
+        document.getElementById('tierLabel').textContent = tierInfo.label;
+        
+        // Handle form submission
+        document.getElementById('checkoutForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value.trim();
+            const emailError = document.getElementById('emailError');
+            
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                emailError.textContent = 'Please enter a valid email address';
+                emailError.classList.add('show');
+                return;
+            }
+            
+            emailError.classList.remove('show');
+            
+            // Store checkout data
+            localStorage.setItem('stripeCheckoutData', JSON.stringify({
+                email: email,
+                tier: tier,
+                timestamp: new Date().getTime()
+            }));
+            
+            // Disable button and show loading
+            const btn = document.getElementById('proceedBtn');
+            btn.disabled = true;
+            btn.textContent = 'Redirecting...';
+            
+            // Redirect to Stripe with success URL that points to success.html
+            // Note: This assumes you've configured the Stripe link with a success URL
+            // If not, you may need to manually come back and the system will detect your email
+            setTimeout(() => {
+                window.location.href = finalStripeLink;
+            }, 500);
+        });
+    </script>
+</body>
+</html>

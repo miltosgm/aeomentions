@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing Your Order...</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 60px 40px;
+            text-align: center;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .error {
+            color: #e74c3c;
+            margin-top: 30px;
+            padding: 15px;
+            background: #fdeaea;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .error.show {
+            display: block;
+        }
+        
+        .manual-link {
+            margin-top: 20px;
+        }
+        
+        .manual-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .manual-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="spinner"></div>
+        <h1>Payment Confirmed!</h1>
+        <p>Setting up your account and redirecting you to complete your intake form...</p>
+        
+        <div class="error" id="error">
+            <p id="errorMsg">Could not complete setup. Please <a href="#" id="manualLink">click here to continue</a>.</p>
+        </div>
+        
+        <div class="manual-link" id="manualLinkContainer" style="display: none;">
+            <p>Takes too long? <a href="#" id="skipLink">Continue to intake form</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Airtable form URL
+        const AIRTABLE_FORM_URL = 'https://airtable.com/app1v3JxIrfJYijVh/pagg8GYHP3jDCKaUl/form';
+        
+        // Get session ID from URL
+        const params = new URLSearchParams(window.location.search);
+        const sessionId = params.get('session_id');
+        
+        let customerEmail = '';
+        let tier = '';
+        
+        async function processPayment() {
+            try {
+                if (!sessionId) {
+                    throw new Error('No session ID found');
+                }
+                
+                // Fetch session details from your backend
+                // For now, we'll try to get it from Stripe
+                const response = await fetch('/api/checkout-session', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ sessionId })
+                });
+                
+                if (!response.ok) {
+                    // If backend doesn't exist, use localStorage fallback
+                    const stored = localStorage.getItem('stripeCheckoutData');
+                    if (stored) {
+                        const data = JSON.parse(stored);
+                        customerEmail = data.email || '';
+                        tier = data.tier || '';
+                        localStorage.removeItem('stripeCheckoutData');
+                    } else {
+                        throw new Error('Could not retrieve payment details');
+                    }
+                } else {
+                    const data = await response.json();
+                    customerEmail = data.email || '';
+                    tier = data.tier || '';
+                }
+                
+                // Redirect to Airtable form with prefilled email
+                redirectToAirtableForm();
+                
+            } catch (error) {
+                console.error('Error:', error);
+                showError(error.message);
+            }
+        }
+        
+        function redirectToAirtableForm() {
+            // Airtable forms don't support URL-based prefilling directly
+            // So we'll open the form and store email in localStorage for JS injection
+            if (customerEmail) {
+                localStorage.setItem('prefillEmail', customerEmail);
+                if (tier) {
+                    localStorage.setItem('prefillTier', tier);
+                }
+            }
+            
+            // Redirect after a brief delay
+            setTimeout(() => {
+                window.location.href = AIRTABLE_FORM_URL;
+            }, 500);
+        }
+        
+        function showError(message) {
+            document.getElementById('error').classList.add('show');
+            document.getElementById('errorMsg').textContent = `Error: ${message}. Please `;
+            document.getElementById('manualLink').href = AIRTABLE_FORM_URL;
+            document.getElementById('manualLinkContainer').style.display = 'block';
+        }
+        
+        // Show manual link after 5 seconds
+        setTimeout(() => {
+            document.getElementById('skipLink').href = AIRTABLE_FORM_URL;
+            document.getElementById('manualLinkContainer').style.display = 'block';
+        }, 5000);
+        
+        // Start processing
+        processPayment();
+    </script>
+</body>
+</html>
