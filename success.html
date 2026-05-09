@@ -57,17 +57,21 @@
             line-height: 1.6;
         }
         
-        .error {
-            color: #e74c3c;
-            margin-top: 30px;
-            padding: 15px;
-            background: #fdeaea;
-            border-radius: 8px;
-            display: none;
+        .success-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: scaleIn 0.5s ease-out;
         }
         
-        .error.show {
-            display: block;
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
         
         .manual-link {
@@ -87,13 +91,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="spinner"></div>
-        <h1>Payment Confirmed!</h1>
-        <p>Setting up your account and redirecting you to complete your intake form...</p>
-        
-        <div class="error" id="error">
-            <p id="errorMsg">Could not complete setup. Please <a href="#" id="manualLink">click here to continue</a>.</p>
-        </div>
+        <div class="spinner" id="spinner"></div>
+        <div class="success-icon" id="successIcon" style="display: none;">✓</div>
+        <h1 id="mainTitle">Payment Confirmed!</h1>
+        <p id="mainText">Setting up your account and redirecting you to complete your intake form...</p>
         
         <div class="manual-link" id="manualLinkContainer" style="display: none;">
             <p>Takes too long? <a href="#" id="skipLink">Continue to intake form</a></p>
@@ -113,42 +114,64 @@
         
         async function processPayment() {
             try {
-                if (!sessionId) {
-                    throw new Error('No session ID found');
-                }
+                let paymentData = null;
                 
-                // Fetch session details from your backend
-                // For now, we'll try to get it from Stripe
-                const response = await fetch('/api/checkout-session', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ sessionId })
-                });
-                
-                if (!response.ok) {
-                    // If backend doesn't exist, use localStorage fallback
-                    const stored = localStorage.getItem('stripeCheckoutData');
-                    if (stored) {
-                        const data = JSON.parse(stored);
-                        customerEmail = data.email || '';
-                        tier = data.tier || '';
+                // First, try localStorage (checkout.html stores it here)
+                const stored = localStorage.getItem('stripeCheckoutData');
+                if (stored) {
+                    try {
+                        paymentData = JSON.parse(stored);
+                        customerEmail = paymentData.email || '';
+                        tier = paymentData.tier || '';
                         localStorage.removeItem('stripeCheckoutData');
-                    } else {
-                        throw new Error('Could not retrieve payment details');
+                    } catch (e) {
+                        console.error('Invalid localStorage data:', e);
                     }
-                } else {
-                    const data = await response.json();
-                    customerEmail = data.email || '';
-                    tier = data.tier || '';
                 }
                 
-                // Redirect to Airtable form with prefilled email
-                redirectToAirtableForm();
+                // If we have email from localStorage, proceed
+                if (customerEmail) {
+                    redirectToAirtableForm();
+                    return;
+                }
+                
+                // Try backend API if sessionId exists
+                if (sessionId) {
+                    try {
+                        const response = await fetch('/api/checkout-session', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ sessionId })
+                        });
+                        
+                        if (response.ok) {
+                            const data = await response.json();
+                            customerEmail = data.email || '';
+                            tier = data.tier || '';
+                            redirectToAirtableForm();
+                            return;
+                        }
+                    } catch (e) {
+                        console.error('Backend error:', e);
+                    }
+                }
+                
+                // Fallback: allow manual continuation
+                showManualOption();
                 
             } catch (error) {
                 console.error('Error:', error);
-                showError(error.message);
+                showManualOption();
             }
+        }
+        
+        function showManualOption() {
+            // Hide spinner, show checkmark
+            document.getElementById('spinner').style.display = 'none';
+            document.getElementById('successIcon').style.display = 'block';
+            document.getElementById('mainTitle').textContent = 'All Set!';
+            document.getElementById('mainText').textContent = 'Click below to complete your account setup.';
+            document.getElementById('manualLinkContainer').style.display = 'block';
         }
         
         function redirectToAirtableForm() {
@@ -167,18 +190,14 @@
             }, 500);
         }
         
-        function showError(message) {
-            document.getElementById('error').classList.add('show');
-            document.getElementById('errorMsg').textContent = `Error: ${message}. Please `;
-            document.getElementById('manualLink').href = AIRTABLE_FORM_URL;
-            document.getElementById('manualLinkContainer').style.display = 'block';
-        }
+        // Initialize
+        document.getElementById('skipLink').href = AIRTABLE_FORM_URL;
+        document.getElementById('manualLink').href = AIRTABLE_FORM_URL;
         
-        // Show manual link after 5 seconds
+        // Show manual link after 3 seconds
         setTimeout(() => {
-            document.getElementById('skipLink').href = AIRTABLE_FORM_URL;
             document.getElementById('manualLinkContainer').style.display = 'block';
-        }, 5000);
+        }, 3000);
         
         // Start processing
         processPayment();
